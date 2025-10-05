@@ -1,0 +1,4579 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+.cursor/rules/global.mdc
+.cursorignore
+.gitignore
+.kiro/specs/homepage-frontend-design/design.md
+.kiro/specs/homepage-frontend-design/requirements.md
+.kiro/specs/homepage-frontend-design/tasks.md
+.kiro/steering/clean_archi.md
+.kiro/steering/stepbystep.md
+components.json
+eslint.config.mjs
+next.config.ts
+package.json
+postcss.config.mjs
+README.md
+src/app/globals.css
+src/app/layout.tsx
+src/app/page.tsx
+src/app/providers.tsx
+src/components/home/AchievementCard.tsx
+src/components/home/GameCard.tsx
+src/components/home/PartnerSection.tsx
+src/components/home/RecommendSection.tsx
+src/components/home/SalesSection.tsx
+src/components/layout/Header.tsx
+src/components/shared/LiveActivityBanner.tsx
+src/components/shared/NotificationIcon.tsx
+src/components/shared/RefreshIcon.tsx
+src/components/ui/accordion.tsx
+src/components/ui/avatar.tsx
+src/components/ui/badge.tsx
+src/components/ui/button.tsx
+src/components/ui/card.tsx
+src/components/ui/checkbox.tsx
+src/components/ui/dropdown-menu.tsx
+src/components/ui/file-upload.tsx
+src/components/ui/form.tsx
+src/components/ui/input.tsx
+src/components/ui/label.tsx
+src/components/ui/select.tsx
+src/components/ui/separator.tsx
+src/components/ui/sheet.tsx
+src/components/ui/textarea.tsx
+src/components/ui/toast.tsx
+src/components/ui/toaster.tsx
+src/hooks/use-toast.ts
+src/lib/constants.ts
+src/lib/icon-mapping.ts
+src/lib/mock-data.ts
+src/lib/utils.ts
+src/types/achievement.ts
+src/types/game.ts
+src/types/user.ts
+tailwind.config.ts
+tsconfig.json
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path=".cursor/rules/global.mdc">
+---
+description: Common Guideline
+globs: 
+alwaysApply: true
+---
+
+
+# Senior Developer Guidelines
+
+## Must
+
+- always use client component for all components. (use `use client` directive)
+- always use promise for page.tsx params props.
+- use valid picsum.photos stock image for placeholder image
+
+## Library
+
+use following libraries for specific functionalities:
+
+1. `date-fns`: For efficient date and time handling.
+2. `ts-pattern`: For clean and type-safe branching logic.
+3. `@tanstack/react-query`: For server state management.
+4. `zustand`: For lightweight global state management.
+5. `react-use`: For commonly needed React hooks.
+6. `es-toolkit`: For robust utility functions.
+7. `lucide-react`: For customizable icons.
+8. `zod`: For schema validation and data integrity.
+9. `shadcn-ui`: For pre-built accessible UI components.
+10. `tailwindcss`: For utility-first CSS styling.
+11. `supabase`: For a backend-as-a-service solution.
+12. `react-hook-form`: For form validation and state management.
+
+## Directory Structure
+
+- src
+- src/app: Next.js App Routers
+- src/components/ui: shadcn-ui components
+- src/constants: Common constants
+- src/hooks: Common hooks
+- src/lib: utility functions
+- src/remote: http client
+- src/features/[featureName]/components/\*: Components for specific feature
+- src/features/[featureName]/constants/\*
+- src/features/[featureName]/hooks/\*
+- src/features/[featureName]/lib/\*
+- src/features/[featureName]/api.ts: api fetch functions
+
+## Solution Process:
+
+1. Rephrase Input: Transform to clear, professional prompt.
+2. Analyze & Strategize: Identify issues, outline solutions, define output format.
+3. Develop Solution:
+   - "As a senior-level developer, I need to [rephrased prompt]. To accomplish this, I need to:"
+   - List steps numerically.
+   - "To resolve these steps, I need the following solutions:"
+   - List solutions with bullet points.
+4. Validate Solution: Review, refine, test against edge cases.
+5. Evaluate Progress:
+   - If incomplete: Pause, inform user, await input.
+   - If satisfactory: Proceed to final output.
+6. Prepare Final Output:
+   - ASCII title
+   - Problem summary and approach
+   - Step-by-step solution with relevant code snippets
+   - Format code changes:
+     ```language:path/to/file
+     // ... existing code ...
+     function exampleFunction() {
+         // Modified or new code here
+     }
+     // ... existing code ...
+     ```
+   - Use appropriate formatting
+   - Describe modifications
+   - Conclude with potential improvements
+
+## Key Mindsets:
+
+1. Simplicity
+2. Readability
+3. Maintainability
+4. Testability
+5. Reusability
+6. Functional Paradigm
+7. Pragmatism
+
+## Code Guidelines:
+
+1. Early Returns
+2. Conditional Classes over ternary
+3. Descriptive Names
+4. Constants > Functions
+5. DRY
+6. Functional & Immutable
+7. Minimal Changes
+8. Pure Functions
+9. Composition over inheritance
+
+## Functional Programming:
+
+- Avoid Mutation
+- Use Map, Filter, Reduce
+- Currying and Partial Application
+- Immutability
+
+## Code-Style Guidelines
+
+- Use TypeScript for type safety.
+- Follow the coding standards defined in the ESLint configuration.
+- Ensure all components are responsive and accessible.
+- Use Tailwind CSS for styling, adhering to the defined color palette.
+- When generating code, prioritize TypeScript and React best practices.
+- Ensure that any new components are reusable and follow the existing design patterns.
+- Minimize the use of AI generated comments, instead use clearly named variables and functions.
+- Always validate user inputs and handle errors gracefully.
+- Use the existing components and pages as a reference for the new components and pages.
+
+## Performance:
+
+- Avoid Premature Optimization
+- Profile Before Optimizing
+- Optimize Judiciously
+- Document Optimizations
+
+## Comments & Documentation:
+
+- Comment function purpose
+- Use JSDoc for JS
+- Document "why" not "what"
+
+## Function Ordering:
+
+- Higher-order functionality first
+- Group related functions
+
+## Handling Bugs:
+
+- Use TODO: and FIXME: comments
+
+## Error Handling:
+
+- Use appropriate techniques
+- Prefer returning errors over exceptions
+
+## Testing:
+
+- Unit tests for core functionality
+- Consider integration and end-to-end tests
+
+## Next.js
+
+- you must use promise for page.tsx params props.
+
+## Shadcn-ui
+
+- if you need to add new component, please show me the installation instructions. I'll paste it into terminal.
+- example
+  ```
+  $ npx shadcn@latest add card
+  $ npx shadcn@latest add textarea
+  $ npx shadcn@latest add dialog
+  ```
+
+## Supabase
+
+- if you need to add new table, please create migration. I'll paste it into supabase.
+- do not run supabase locally
+- store migration query for `.sql` file. in /supabase/migrations/
+
+## Package Manager
+
+- use npm as package manager.
+
+## Korean Text
+
+- 코드를 생성한 후에 utf-8 기준으로 깨지는 한글이 있는지 확인해주세요. 만약 있다면 수정해주세요.
+
+You are a senior full-stack developer, one of those rare 10x devs. Your focus: clean, maintainable, high-quality code.
+Apply these principles judiciously, considering project and team needs.
+</file>
+
+<file path=".cursorignore">
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# EasyNext
+.easynext
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+</file>
+
+<file path=".kiro/specs/homepage-frontend-design/design.md">
+# Design Document
+
+## Overview
+
+WhichGame (땃쥐) 홈페이지는 Next.js 15, React 19, TypeScript를 기반으로 구축되는 게임 커뮤니티 플랫폼입니다. 다크 테마의 현대적인 UI/UX를 제공하며, 게이머와 게임 제작자가 리뷰를 공유하고 소통할 수 있는 인터랙티브한 경험을 제공합니다.
+
+### Design Principles
+
+1. **Component-First Architecture**: 재사용 가능한 컴포넌트 중심 설계
+2. **Type Safety**: TypeScript를 활용한 타입 안정성 확보
+3. **Performance**: Next.js의 서버 컴포넌트와 클라이언트 컴포넌트 최적 활용
+4. **Accessibility**: 키보드 네비게이션 및 스크린 리더 지원
+5. **Responsive Design**: 모바일부터 데스크톱까지 일관된 경험
+
+## Architecture
+
+### Technology Stack
+
+- **Framework**: Next.js 15 (App Router)
+- **UI Library**: React 19
+- **Language**: TypeScript 5
+- **Styling**: Tailwind CSS 3.4
+- **Component Library**: Radix UI (headless components)
+- **Icons**: Lucide React
+- **Animation**: Framer Motion
+- **State Management**: Zustand (필요시)
+- **Form Handling**: React Hook Form + Zod
+
+### Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx              # Root layout with providers
+│   ├── page.tsx                # Homepage (client component)
+│   └── globals.css             # Global styles with custom theme
+├── components/
+│   ├── layout/
+│   │   ├── Header.tsx          # Navigation header
+│   │   └── Footer.tsx          # Footer (future)
+│   ├── home/
+│   │   ├── SalesSection.tsx    # 게이머 & 제작자 영업 섹션
+│   │   ├── GameCard.tsx        # 게임 리뷰 카드
+│   │   ├── AchievementCard.tsx # 히든 업적 카드
+│   │   ├── RecommendSection.tsx # 게임 추천 섹션
+│   │   └── PartnerSection.tsx  # 파트너스 & 디스코드
+│   ├── ui/
+│   │   ├── button.tsx          # Shadcn button
+│   │   ├── card.tsx            # Shadcn card
+│   │   └── ...                 # Other Shadcn components
+│   └── shared/
+│       ├── LiveActivityBanner.tsx # 실시간 활동 배너
+│       ├── NotificationIcon.tsx   # 알림 아이콘
+│       └── RefreshIcon.tsx        # 새로고침 아이콘
+├── lib/
+│   ├── utils.ts                # cn() utility
+│   └── constants.ts            # Theme colors, etc.
+├── types/
+│   ├── game.ts                 # Game related types
+│   ├── user.ts                 # User related types
+│   └── achievement.ts          # Achievement types
+└── hooks/
+    ├── use-toast.ts            # Toast notifications
+    └── use-live-activity.ts    # Live activity data
+```
+
+## Components and Interfaces
+
+### 1. Header Component
+
+**Purpose**: 상단 네비게이션 및 사용자 인터페이스 제공
+
+**Component Structure**:
+```typescript
+// components/layout/Header.tsx
+interface HeaderProps {
+  className?: string;
+}
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+interface LiveActivity {
+  activeUsers: number;
+}
+```
+
+**Key Features**:
+- 로고 이미지 표시
+- 로그인 버튼 (cyan accent color)
+- 알림 아이콘 with badge
+- 실시간 활동 배너 (펄스 애니메이션)
+- 네비게이션 메뉴 (5개 항목)
+
+**Styling**:
+- Fixed height header with border-bottom
+- Flex layout for alignment
+- Hover effects on nav items (color: #00CEFF)
+
+### 2. LiveActivityBanner Component
+
+**Purpose**: 실시간 활동 중인 사용자 수 표시
+
+**Component Structure**:
+```typescript
+// components/shared/LiveActivityBanner.tsx
+interface LiveActivityBannerProps {
+  activeUsers: number;
+  className?: string;
+}
+```
+
+**Key Features**:
+- 빨간색 펄스 애니메이션 점
+- 활동 중인 사용자 수 표시
+- 흰색 배경의 pill 형태
+
+**Animation**:
+```css
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  80%, 100% { transform: scale(1.5); opacity: 0; }
+}
+```
+
+### 3. SalesSection Component
+
+**Purpose**: 게이머, 제작자, GOAT, 히든 업적 카드 그리드 표시
+
+**Component Structure**:
+```typescript
+// components/home/SalesSection.tsx
+interface SalesSectionProps {
+  gamerReview?: GameReview;
+  makerReview?: MakerReview;
+  goatReview?: GoatReview;
+  achievement?: Achievement;
+}
+```
+
+**Layout**:
+- 4-column grid (grid-cols-4)
+- Gap between cards (gap-6)
+- Responsive breakpoints
+
+### 4. GameCard Component
+
+**Purpose**: 게임 리뷰 카드 (게이머/제작자/GOAT)
+
+**Component Structure**:
+```typescript
+// components/home/GameCard.tsx
+interface GameCardProps {
+  type: 'gamer' | 'maker' | 'goat';
+  title: string;
+  gameTitle: string;
+  gameImage: string;
+  likesCount: number;
+  icon: LucideIcon;
+  iconColor: string;
+  showRefresh?: boolean;
+  showWriteLink?: boolean;
+  onRefresh?: () => void;
+  onWriteClick?: () => void;
+}
+```
+
+**Key Features**:
+- 헤더 (아이콘 + 제목 + 액션 버튼)
+- 게임명 배지 (cyan border)
+- 게임 이미지 (aspect ratio 16:9)
+- 좋아요 카운터 (아이콘 + 숫자)
+- 리뷰 작성 영역 (textarea)
+- 호버 효과 (translateY -5px)
+
+**Styling**:
+- Background: #1E1E1E
+- Border radius: 8px
+- Padding: 20px
+- Transition: 0.2s
+
+### 5. AchievementCard Component
+
+**Purpose**: 히든 업적 달성 표시
+
+**Component Structure**:
+```typescript
+// components/home/AchievementCard.tsx
+interface AchievementCardProps {
+  username: string;
+  achievementName: string;
+  achievementDescription: string;
+  achievementIcon: LucideIcon;
+  isFirstAchievement: boolean;
+  viewAllLink: string;
+}
+```
+
+**Key Features**:
+- 골드 테두리 (2px solid #FFD700)
+- 우측 상단 골드 장식 (::after pseudo-element)
+- 사용자명 강조 (cyan color)
+- 업적 아이콘 (2.5rem, gold color)
+- 최초 달성 배지
+- 호버 효과
+
+**Styling**:
+```css
+.achievement-card {
+  background-color: #1E1E1E;
+  border: 2px solid #FFD700;
+  position: relative;
+  overflow: hidden;
+}
+
+.achievement-card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background-color: #FFD700;
+  transform: rotate(45deg) translate(20px, -40px);
+}
+```
+
+### 6. RecommendSection Component
+
+**Purpose**: 게임 추천 및 광고주 섹션
+
+**Component Structure**:
+```typescript
+// components/home/RecommendSection.tsx
+interface RecommendSectionProps {
+  recommendations: GameRecommendation[];
+  advertisement?: Advertisement;
+  onRefresh?: () => void;
+}
+
+interface GameRecommendation {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+interface Advertisement {
+  title: string;
+  subtitle: string;
+  image: string;
+  inquiryText: string;
+}
+```
+
+**Layout**:
+- 4-column grid
+- 2 game cards + 1 ad section (col-span-2)
+- Card background: #1E1E1E
+- Ad section: left border 4px solid #FF3B30
+
+### 7. PartnerSection Component
+
+**Purpose**: 파트너스 모집 및 디스코드 서버 홍보
+
+**Component Structure**:
+```typescript
+// components/home/PartnerSection.tsx
+interface PartnerSectionProps {
+  partnerInfo: {
+    title: string;
+    description: string[];
+    applyLink: string;
+  };
+  discordInfo: {
+    serverName: string;
+    description: string;
+    inviteLink: string;
+  };
+}
+```
+
+**Layout**:
+- 2-column flex layout
+- Left: Partner recruitment (icon + text + button)
+- Right: Discord button (centered)
+
+**Styling**:
+- Background: #1E1E1E
+- Discord button: #5865F2 (hover: #4752C4)
+- Partner button: #3B82F6
+
+## Data Models
+
+### Game Review
+
+```typescript
+// types/game.ts
+export interface GameReview {
+  id: string;
+  gameTitle: string;
+  gameImage: string;
+  reviewText: string;
+  rating?: number;
+  likesCount: number;
+  author: {
+    id: string;
+    username: string;
+  };
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface MakerReview extends GameReview {
+  makerName: string;
+  makerRole: string;
+}
+
+export interface GoatReview extends GameReview {
+  month: string;
+  year: number;
+  isGoat: true;
+}
+```
+
+### Achievement
+
+```typescript
+// types/achievement.ts
+export interface Achievement {
+  id: string;
+  name: string;
+  description: string;
+  iconName: string;
+  isHidden: boolean;
+  isFirstAchievement: boolean;
+  achievedBy: {
+    userId: string;
+    username: string;
+    achievedAt: Date;
+  };
+  criteria: {
+    type: string;
+    value: number | string;
+  };
+}
+```
+
+### Live Activity
+
+```typescript
+// types/user.ts
+export interface LiveActivity {
+  activeUsers: number;
+  timestamp: Date;
+}
+
+export interface NotificationBadge {
+  count: number;
+  hasUnread: boolean;
+}
+```
+
+## Error Handling
+
+### Client-Side Errors
+
+1. **Image Loading Failures**
+   - Fallback to placeholder image
+   - Display error message in card
+
+2. **API Request Failures**
+   - Show toast notification
+   - Retry mechanism for critical data
+   - Graceful degradation
+
+3. **Form Validation Errors**
+   - Inline error messages
+   - Zod schema validation
+   - Clear error states
+
+### Error Boundary
+
+```typescript
+// components/ErrorBoundary.tsx
+interface ErrorBoundaryProps {
+  children: React.ReactNode;
+  fallback?: React.ReactNode;
+}
+
+// Catches React rendering errors
+// Logs to error tracking service
+// Shows user-friendly error message
+```
+
+## Testing Strategy
+
+### Unit Testing
+
+1. **Component Tests**
+   - Test component rendering
+   - Test prop variations
+   - Test user interactions
+   - Test accessibility
+
+2. **Utility Function Tests**
+   - Test cn() utility
+   - Test data transformation functions
+   - Test validation schemas
+
+### Integration Testing
+
+1. **Page Tests**
+   - Test full page rendering
+   - Test navigation flows
+   - Test data fetching
+   - Test error states
+
+2. **User Flow Tests**
+   - Test login flow
+   - Test review submission
+   - Test refresh actions
+   - Test navigation
+
+### Visual Regression Testing
+
+- Snapshot tests for components
+- Visual diff testing for design changes
+- Cross-browser compatibility
+
+## Performance Optimization
+
+### Code Splitting
+
+- Dynamic imports for heavy components
+- Route-based code splitting (Next.js default)
+- Lazy loading for below-fold content
+
+### Image Optimization
+
+- Next.js Image component
+- WebP format with fallbacks
+- Responsive images
+- Lazy loading
+
+### CSS Optimization
+
+- Tailwind CSS purging
+- Critical CSS inlining
+- CSS modules for component styles
+
+### Caching Strategy
+
+- Static page generation where possible
+- ISR (Incremental Static Regeneration) for dynamic content
+- Client-side caching with React Query
+
+## Accessibility
+
+### Keyboard Navigation
+
+- Tab order for all interactive elements
+- Focus indicators (ring utility)
+- Skip to content link
+
+### Screen Reader Support
+
+- Semantic HTML elements
+- ARIA labels where needed
+- Alt text for images
+- Live regions for dynamic content
+
+### Color Contrast
+
+- WCAG AA compliance
+- Sufficient contrast ratios
+- Color-blind friendly palette
+
+## Theme System
+
+### Color Palette
+
+```typescript
+// lib/constants.ts
+export const THEME_COLORS = {
+  // Background
+  background: '#0a0a0a',
+  cardBackground: '#1E1E1E',
+  
+  // Text
+  text: '#e0e0e0',
+  textMuted: '#9ca3af',
+  
+  // Accent
+  primary: '#00CEFF',      // Cyan
+  primaryHover: '#0099cc',
+  
+  // Status
+  success: '#10b981',
+  warning: '#f59e0b',
+  error: '#ef4444',
+  
+  // Special
+  gold: '#FFD700',
+  discord: '#5865F2',
+  discordHover: '#4752C4',
+  adBorder: '#FF3B30',
+} as const;
+```
+
+### Typography
+
+```typescript
+export const TYPOGRAPHY = {
+  fontFamily: "'Noto Sans KR', sans-serif",
+  fontSize: {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',     // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',  // 24px
+  },
+  fontWeight: {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+  },
+} as const;
+```
+
+### Spacing
+
+```typescript
+export const SPACING = {
+  cardPadding: '1.25rem',  // 20px
+  sectionGap: '1.5rem',    // 24px
+  gridGap: '1.5rem',       // 24px
+} as const;
+```
+
+### Animation Timings
+
+```typescript
+export const ANIMATIONS = {
+  fast: '0.2s',
+  normal: '0.3s',
+  slow: '0.5s',
+  pulse: '1.5s',
+} as const;
+```
+
+## Design Decisions and Rationales
+
+### 1. Client vs Server Components
+
+**Decision**: Homepage는 client component로 구현
+**Rationale**: 
+- 많은 인터랙티브 요소 (hover, click, refresh)
+- 실시간 데이터 업데이트 필요
+- 애니메이션 및 상태 관리 필요
+
+### 2. Tailwind CSS over CSS-in-JS
+
+**Decision**: Tailwind CSS 사용
+**Rationale**:
+- 빠른 개발 속도
+- 일관된 디자인 시스템
+- 작은 번들 크기
+- 프로젝트에 이미 설정됨
+
+### 3. Radix UI for Complex Components
+
+**Decision**: Radix UI 사용 (필요시)
+**Rationale**:
+- Headless components로 커스터마이징 용이
+- 접근성 기본 제공
+- 프로젝트에 이미 설치됨
+
+### 4. Lucide React for Icons
+
+**Decision**: Lucide React 사용
+**Rationale**:
+- Font Awesome 대신 React 컴포넌트
+- Tree-shaking 지원
+- TypeScript 지원
+- 프로젝트에 이미 설치됨
+
+### 5. Framer Motion for Animations
+
+**Decision**: Framer Motion 사용
+**Rationale**:
+- 선언적 애니메이션 API
+- 복잡한 애니메이션 쉽게 구현
+- 성능 최적화
+- 프로젝트에 이미 설치됨
+
+## Migration from HTML to React
+
+### Key Changes
+
+1. **Inline Styles → Tailwind Classes**
+   - CSS-in-JS 스타일을 Tailwind utility classes로 변환
+   - Custom animations는 Tailwind config에 추가
+
+2. **Font Awesome → Lucide React**
+   - `<i class="fas fa-gamepad">` → `<Gamepad className="..." />`
+   - 아이콘 매핑 테이블 작성
+
+3. **Static HTML → Dynamic Components**
+   - 반복되는 카드를 컴포넌트로 추상화
+   - Props를 통한 데이터 주입
+
+4. **Inline Event Handlers → React Event Handlers**
+   - `onclick` → `onClick`
+   - 이벤트 핸들러 함수 작성
+
+5. **CSS Animations → Framer Motion**
+   - Keyframe animations를 Framer Motion으로 변환
+   - 더 나은 제어와 성능
+
+## Next Steps
+
+1. **Phase 1**: 기본 컴포넌트 구조 및 레이아웃 구현
+2. **Phase 2**: 스타일링 및 테마 적용
+3. **Phase 3**: 인터랙션 및 애니메이션 구현
+4. **Phase 4**: 데이터 연동 및 상태 관리
+5. **Phase 5**: 반응형 디자인 및 최적화
+6. **Phase 6**: 접근성 및 테스트
+</file>
+
+<file path=".kiro/specs/homepage-frontend-design/requirements.md">
+# Requirements Document
+
+## Introduction
+
+WhichGame (땃쥐) 게임 커뮤니티 플랫폼의 홈페이지 프론트엔드를 Next.js 기반으로 구현합니다. 제공된 HTML 디자인을 기반으로 다크 테마의 현대적인 게임 커뮤니티 UI를 구축하며, 게이머와 게임 제작자가 소통하고 리뷰를 공유할 수 있는 인터랙티브한 사용자 경험을 제공합니다.
+
+## Requirements
+
+### Requirement 1: 상단 네비게이션 헤더 구현
+
+**User Story:** As a 사용자, I want 상단 네비게이션 메뉴를 통해 주요 섹션에 접근할 수 있기를, so that 플랫폼의 다양한 기능을 쉽게 탐색할 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 페이지가 로드되면 THEN 시스템은 SHALL 로고, 로그인 버튼, 알림 아이콘, 실시간 활동 배너, 네비게이션 메뉴를 포함한 헤더를 표시한다
+2. WHEN 사용자가 네비게이션 메뉴 항목에 마우스를 올리면 THEN 시스템은 SHALL 해당 항목의 색상을 #00CEFF로 변경한다
+3. WHEN 알림 아이콘이 표시되면 THEN 시스템은 SHALL 읽지 않은 알림 개수를 빨간색 배지로 표시한다
+4. WHEN 실시간 활동 배너가 표시되면 THEN 시스템은 SHALL 현재 활동 중인 게이머 수를 애니메이션 효과와 함께 표시한다
+5. WHEN 로그인 버튼을 클릭하면 THEN 시스템은 SHALL 로그인 페이지로 이동한다
+
+### Requirement 2: 게이머 & 제작자 영업 섹션 구현
+
+**User Story:** As a 게이머 또는 제작자, I want 내 게임 리뷰나 제작 경험을 공유할 수 있기를, so that 커뮤니티와 소통하고 피드백을 받을 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 영업 섹션이 로드되면 THEN 시스템은 SHALL 게이머의 영업, 제작자의 영업, 지난달의 GOAT, 히든 업적 카드를 4열 그리드로 표시한다
+2. WHEN 사용자가 카드에 마우스를 올리면 THEN 시스템은 SHALL 카드를 위로 5px 이동시키는 호버 효과를 적용한다
+3. WHEN 새로고침 아이콘을 클릭하면 THEN 시스템은 SHALL 180도 회전 애니메이션과 함께 해당 섹션의 콘텐츠를 새로고침한다
+4. WHEN 각 카드가 표시되면 THEN 시스템은 SHALL 게임명 배지, 게임 이미지, 좋아요 카운트, 리뷰 작성 영역을 포함한다
+5. WHEN "작성하러 가기" 링크를 클릭하면 THEN 시스템은 SHALL 해당 리뷰 작성 페이지로 이동한다
+
+### Requirement 3: 히든 업적 카드 구현
+
+**User Story:** As a 사용자, I want 다른 사용자가 달성한 히든 업적을 확인할 수 있기를, so that 커뮤니티 활동에 동기부여를 받을 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 히든 업적 카드가 표시되면 THEN 시스템은 SHALL 골드 테두리(#FFD700)와 우측 상단 골드 장식을 포함한다
+2. WHEN 업적 정보가 표시되면 THEN 시스템은 SHALL 달성자 닉네임(#00CEFF 색상), 업적 아이콘, 업적 이름, 설명을 표시한다
+3. WHEN 최초 달성 업적인 경우 THEN 시스템은 SHALL "최초 달성" 배지를 골드 색상으로 표시한다
+4. WHEN 사용자가 카드에 마우스를 올리면 THEN 시스템은 SHALL 카드를 위로 5px 이동시키는 호버 효과를 적용한다
+5. WHEN "현재까지 달성된 히든 업적 보기" 링크를 클릭하면 THEN 시스템은 SHALL 히든 업적 목록 페이지로 이동한다
+
+### Requirement 4: 게임 추천 섹션 구현
+
+**User Story:** As a 게이머, I want 내 취향에 맞는 게임 추천을 받을 수 있기를, so that 새로운 게임을 발견할 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 게임 추천 섹션이 로드되면 THEN 시스템은 SHALL 4열 그리드로 게임 추천 2개와 광고주 섹션 1개를 표시한다
+2. WHEN 새로고침 아이콘을 클릭하면 THEN 시스템은 SHALL 180도 회전 애니메이션과 함께 추천 게임을 새로고침한다
+3. WHEN 광고주 섹션이 표시되면 THEN 시스템은 SHALL 좌측에 빨간색(#FF3B30) 테두리를 포함한다
+4. WHEN 각 게임 카드가 표시되면 THEN 시스템은 SHALL 게임 이미지, 제목, 부제목을 포함한다
+5. WHEN 광고 문의 텍스트가 표시되면 THEN 시스템은 SHALL 빨간색(#FF3B30)으로 강조 표시한다
+
+### Requirement 5: 파트너스 모집 및 디스코드 섹션 구현
+
+**User Story:** As a 커뮤니티 운영자, I want 파트너스를 모집하고 디스코드 서버를 홍보할 수 있기를, so that 커뮤니티를 확장할 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 파트너스 섹션이 로드되면 THEN 시스템은 SHALL 좌측에 파트너스 모집, 우측에 디스코드 서버 버튼을 2열로 표시한다
+2. WHEN 파트너스 모집 영역이 표시되면 THEN 시스템은 SHALL 아이콘, 제목(#00CEFF 색상), 설명, 신청 버튼을 포함한다
+3. WHEN 디스코드 버튼에 마우스를 올리면 THEN 시스템은 SHALL 배경색을 #4752C4로 변경하고 위로 이동하는 효과를 적용한다
+4. WHEN 신청 버튼을 클릭하면 THEN 시스템은 SHALL 파트너스 신청 페이지로 이동한다
+5. WHEN 디스코드 버튼을 클릭하면 THEN 시스템은 SHALL 디스코드 서버 초대 링크로 이동한다
+
+### Requirement 6: 다크 테마 및 반응형 디자인 구현
+
+**User Story:** As a 사용자, I want 일관된 다크 테마와 반응형 레이아웃을 경험할 수 있기를, so that 다양한 디바이스에서 편안하게 사용할 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 페이지가 로드되면 THEN 시스템은 SHALL 배경색 #0a0a0a, 텍스트 색상 #e0e0e0의 다크 테마를 적용한다
+2. WHEN 강조 색상이 필요한 경우 THEN 시스템은 SHALL 주요 강조색으로 #00CEFF를 사용한다
+3. WHEN 카드 컴포넌트가 표시되면 THEN 시스템은 SHALL 배경색 #1E1E1E, 8px 둥근 모서리를 적용한다
+4. WHEN 화면 크기가 변경되면 THEN 시스템은 SHALL 그리드 레이아웃을 적절히 조정한다
+5. WHEN 호버 효과가 적용되면 THEN 시스템은 SHALL 0.3초 트랜지션 애니메이션을 사용한다
+
+### Requirement 7: 인터랙티브 애니메이션 구현
+
+**User Story:** As a 사용자, I want 부드러운 애니메이션과 인터랙션을 경험할 수 있기를, so that 더 생동감 있는 사용자 경험을 얻을 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 실시간 활동 배너의 상태 점이 표시되면 THEN 시스템은 SHALL 1.5초 주기의 펄스 애니메이션을 적용한다
+2. WHEN 새로고침 아이콘에 마우스를 올리면 THEN 시스템은 SHALL 180도 회전 애니메이션을 0.3초 동안 적용한다
+3. WHEN 알림 아이콘에 마우스를 올리면 THEN 시스템은 SHALL 1.1배 확대 효과를 적용한다
+4. WHEN 카드에 마우스를 올리면 THEN 시스템은 SHALL 위로 5px 이동하는 효과를 0.2초 동안 적용한다
+5. WHEN 버튼에 마우스를 올리면 THEN 시스템은 SHALL 배경색 변경과 함께 0.3초 트랜지션을 적용한다
+
+### Requirement 8: 컴포넌트 재사용성 및 타입 안정성
+
+**User Story:** As a 개발자, I want 재사용 가능한 컴포넌트와 타입 안정성을 확보할 수 있기를, so that 유지보수가 용이하고 확장 가능한 코드를 작성할 수 있습니다
+
+#### Acceptance Criteria
+
+1. WHEN 컴포넌트를 작성할 때 THEN 시스템은 SHALL TypeScript 인터페이스로 props를 정의한다
+2. WHEN 공통 UI 요소를 구현할 때 THEN 시스템은 SHALL 재사용 가능한 컴포넌트로 분리한다
+3. WHEN 스타일을 적용할 때 THEN 시스템은 SHALL Tailwind CSS 클래스를 사용한다
+4. WHEN 아이콘을 사용할 때 THEN 시스템은 SHALL lucide-react 라이브러리를 활용한다
+5. WHEN 상태 관리가 필요한 경우 THEN 시스템은 SHALL React hooks 또는 Zustand를 사용한다
+</file>
+
+<file path=".kiro/specs/homepage-frontend-design/tasks.md">
+# Implementation Plan
+
+- [x] 1. 프로젝트 설정 및 테마 시스템 구축
+
+
+
+  - Tailwind config에 커스텀 색상 및 애니메이션 추가
+  - globals.css에 다크 테마 CSS 변수 설정
+  - lib/constants.ts에 테마 상수 정의 (색상, 타이포그래피, 스페이싱)
+  - Noto Sans KR 폰트 추가 (next/font/google)
+  - _Requirements: 6.1, 6.2, 6.3, 6.5_
+
+- [x] 2. 타입 정의 및 유틸리티 작성
+
+
+  - types/game.ts 생성 (GameReview, MakerReview, GoatReview 인터페이스)
+  - types/achievement.ts 생성 (Achievement 인터페이스)
+  - types/user.ts 생성 (LiveActivity, NotificationBadge 인터페이스)
+  - lib/icon-mapping.ts 생성 (Font Awesome → Lucide 아이콘 매핑)
+  - _Requirements: 8.1, 8.2_
+
+- [x] 3. 공유 컴포넌트 구현
+
+- [x] 3.1 LiveActivityBanner 컴포넌트 생성
+
+
+  - components/shared/LiveActivityBanner.tsx 생성
+  - 펄스 애니메이션 구현 (Framer Motion 또는 Tailwind animate)
+  - 실시간 사용자 수 표시
+  - _Requirements: 1.4, 7.1_
+
+- [x] 3.2 NotificationIcon 컴포넌트 생성
+
+
+  - components/shared/NotificationIcon.tsx 생성
+  - 알림 배지 표시 (읽지 않은 알림 개수)
+  - 호버 효과 (scale 1.1)
+  - _Requirements: 1.3, 7.3_
+
+- [x] 3.3 RefreshIcon 컴포넌트 생성
+
+
+  - components/shared/RefreshIcon.tsx 생성
+  - 회전 애니메이션 (180도)
+  - onClick 핸들러 prop
+  - _Requirements: 2.3, 7.2_
+
+- [x] 4. Header 컴포넌트 구현
+
+
+  - components/layout/Header.tsx 생성
+  - 로고 이미지 표시 (Next.js Image 컴포넌트)
+  - 로그인 버튼 구현 (cyan 배경, 호버 효과)
+  - NotificationIcon 통합
+  - LiveActivityBanner 통합
+  - 네비게이션 메뉴 구현 (5개 항목, 호버 효과)
+  - _Requirements: 1.1, 1.2, 1.5_
+
+- [x] 5. GameCard 컴포넌트 구현
+
+- [x] 5.1 GameCard 기본 구조 생성
+
+
+  - components/home/GameCard.tsx 생성
+  - Props 인터페이스 정의 (type, title, gameTitle, gameImage, likesCount 등)
+  - 카드 레이아웃 구현 (배경, 패딩, 둥근 모서리)
+  - _Requirements: 2.4, 8.2_
+
+- [x] 5.2 GameCard 헤더 영역 구현
+
+  - 아이콘 + 제목 표시
+  - RefreshIcon 통합 (조건부 렌더링)
+  - "작성하러 가기" 링크 (조건부 렌더링)
+  - _Requirements: 2.5_
+
+- [x] 5.3 GameCard 콘텐츠 영역 구현
+
+  - 게임명 배지 (cyan border, 아이콘 포함)
+  - 게임 이미지 (Next.js Image, aspect ratio 16:9)
+  - 좋아요 카운터 (아이콘 + 숫자)
+  - 리뷰 작성 영역 (textarea)
+  - _Requirements: 2.4_
+
+- [x] 5.4 GameCard 호버 효과 구현
+
+  - translateY -5px 애니메이션
+  - 0.2초 트랜지션
+  - _Requirements: 2.2, 7.4_
+
+- [x] 6. AchievementCard 컴포넌트 구현
+
+- [x] 6.1 AchievementCard 기본 구조 생성
+
+
+  - components/home/AchievementCard.tsx 생성
+  - Props 인터페이스 정의
+  - 골드 테두리 (2px solid #FFD700)
+  - 우측 상단 골드 장식 (::after pseudo-element, Tailwind arbitrary values)
+  - _Requirements: 3.1_
+
+- [x] 6.2 AchievementCard 콘텐츠 구현
+
+  - 헤더 (달성자 닉네임 강조 - cyan)
+  - 업적 아이콘 (2.5rem, gold)
+  - 업적 이름 및 설명
+  - 최초 달성 배지 (조건부 렌더링)
+  - "현재까지 달성된 히든 업적 보기" 링크
+  - _Requirements: 3.2, 3.3, 3.5_
+
+- [x] 6.3 AchievementCard 호버 효과 구현
+
+  - translateY -5px 애니메이션
+  - _Requirements: 3.4_
+
+- [x] 7. SalesSection 컴포넌트 구현
+
+
+  - components/home/SalesSection.tsx 생성
+  - 4-column 그리드 레이아웃 (grid-cols-4, gap-6)
+  - GameCard 3개 통합 (게이머, 제작자, GOAT)
+  - AchievementCard 1개 통합
+  - Props로 데이터 전달
+  - _Requirements: 2.1_
+
+- [x] 8. RecommendSection 컴포넌트 구현
+
+- [x] 8.1 RecommendSection 기본 구조 생성
+
+
+  - components/home/RecommendSection.tsx 생성
+  - 섹션 헤더 (제목 + RefreshIcon)
+  - 4-column 그리드 레이아웃
+  - _Requirements: 4.1, 4.2_
+
+- [x] 8.2 게임 추천 카드 구현
+
+  - 게임 이미지 (placeholder)
+  - 게임 제목 및 부제목
+  - 2개 카드 렌더링
+  - _Requirements: 4.4_
+
+- [x] 8.3 광고주 섹션 구현
+
+  - col-span-2로 2칸 차지
+  - 좌측 빨간색 테두리 (4px solid #FF3B30)
+  - 광고 이미지, 제목, 부제목
+  - "광고 문의" 텍스트 (빨간색 강조)
+  - _Requirements: 4.3, 4.5_
+
+- [x] 9. PartnerSection 컴포넌트 구현
+
+- [x] 9.1 PartnerSection 기본 구조 생성
+
+
+  - components/home/PartnerSection.tsx 생성
+  - 2-column flex 레이아웃
+  - 배경색 #1E1E1E
+  - _Requirements: 5.1_
+
+- [x] 9.2 파트너스 모집 영역 구현
+
+  - 좌측 아이콘 (Users, 큰 사이즈)
+  - 제목 (cyan 강조)
+  - 설명 텍스트 (2줄)
+  - "지금 신청하기" 버튼
+  - _Requirements: 5.2, 5.4_
+
+- [x] 9.3 디스코드 서버 버튼 구현
+
+  - 중앙 정렬
+  - Discord 아이콘 + 텍스트
+  - 배경색 #5865F2 (호버: #4752C4)
+  - 호버 효과 (shadow, translateY)
+  - _Requirements: 5.3, 5.5_
+
+- [x] 10. 홈페이지 통합 및 레이아웃 구성
+
+
+  - src/app/page.tsx 수정
+  - Header 컴포넌트 통합
+  - SalesSection 통합
+  - RecommendSection 통합
+  - PartnerSection 통합
+  - 섹션 간 간격 조정 (mb-12)
+  - _Requirements: 6.4_
+
+- [x] 11. 반응형 디자인 구현
+
+  - 브레이크포인트 정의 (mobile, tablet, desktop)
+  - 그리드 레이아웃 반응형 조정 (grid-cols-1, md:grid-cols-2, lg:grid-cols-4)
+  - 헤더 반응형 조정 (모바일 메뉴)
+  - 텍스트 크기 반응형 조정
+  - _Requirements: 6.4_
+
+- [x] 12. 애니메이션 및 인터랙션 최적화
+
+  - Framer Motion variants 정의
+  - 페이지 로드 애니메이션 (stagger children)
+  - 스크롤 애니메이션 (선택사항)
+  - 트랜지션 타이밍 최적화
+  - _Requirements: 7.5_
+
+- [x] 13. 접근성 개선
+
+  - 키보드 네비게이션 테스트
+  - ARIA 레이블 추가
+  - 포커스 인디케이터 스타일링
+  - 이미지 alt 텍스트 추가
+  - 색상 대비 검증
+  - _Requirements: 8.1_
+
+- [x] 14. 더미 데이터 및 상태 관리
+
+
+  - lib/mock-data.ts 생성 (더미 데이터)
+  - useState로 로컬 상태 관리
+  - 새로고침 핸들러 구현
+  - 좋아요 카운터 증가 로직 (선택사항)
+  - _Requirements: 8.5_
+
+- [x] 15. 최종 스타일링 및 폴리싱
+
+
+
+  - 모든 컴포넌트 스타일 검증
+  - 호버 효과 일관성 확인
+  - 간격 및 정렬 미세 조정
+  - 로딩 상태 UI (선택사항)
+  - 에러 상태 UI (선택사항)
+  - _Requirements: 6.5_
+</file>
+
+<file path=".kiro/steering/clean_archi.md">
+---
+inclusion: always
+---
+
+# Clean Architecture Guidelines
+
+## Core Dependency Rule
+**Source code dependencies MUST point inward only**
+- Inner layers define interfaces; outer layers implement them
+- High-level modules never depend on low-level modules
+- Both depend on abstractions, not concretions
+
+## Layer Structure
+```
+Entities (Game Rules) → Use Cases (Game Logic) → Controllers/Presenters → UI/Framework
+```
+
+### For AI Mafia Game:
+- **Entities**: Game rules, player states, AI character definitions
+- **Use Cases**: Start game, make vote, AI decision-making, game flow
+- **Adapters**: React components, API routes, AI service integrations
+- **Framework**: Next.js, React, Gemini API, Zustand
+
+## Implementation Rules
+
+### File Organization
+```
+src/
+├── domain/           # Entities & business rules
+│   ├── entities/     # Core game objects
+│   └── rules/        # Game logic
+├── usecases/         # Application business logic
+├── adapters/         # Interface implementations
+│   ├── controllers/  # API route handlers
+│   ├── presenters/   # React components
+│   └── gateways/     # External service adapters
+└── infrastructure/   # Frameworks & drivers
+```
+
+### Dependency Direction
+```
+❌ WRONG: domain/ imports from adapters/
+✅ CORRECT: adapters/ imports from domain/
+```
+
+### AI Integration Pattern
+- AI services (Gemini) stay in infrastructure layer
+- Game logic defines AI behavior interfaces
+- AI adapters implement these interfaces
+- Core game rules remain AI-agnostic
+
+## Code Standards
+
+### Business Logic Protection
+- Game rules live in `src/domain/` only
+- No React/Next.js imports in domain layer
+- AI character logic separated from AI service calls
+- Use dependency injection for external services
+
+### Interface Design
+- Define interfaces in inner layers
+- Keep interfaces focused and role-specific
+- AI character interfaces separate from game interfaces
+- Mock external dependencies for testing
+
+### Error Handling
+- Game rule violations = domain exceptions
+- AI service failures = infrastructure exceptions
+- Handle errors at appropriate boundaries
+
+## Prohibited Patterns
+- Game logic in React components
+- Direct AI API calls from use cases
+- Framework dependencies in domain layer
+- Mixing UI state with game state
+- Business rules in API route handlers
+
+## Testing Strategy
+- Unit test game rules without React/AI services
+- Mock AI responses for game logic tests
+- Integration tests at adapter boundaries
+- E2E tests for complete user flows
+
+## Quick Validation
+Before implementing features:
+- [ ] Game rules isolated from UI/AI services
+- [ ] Dependencies point inward
+- [ ] Interfaces defined by inner layers
+- [ ] External services mockable for tests
+- [ ] Business logic framework-agnostic<!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+-------------------------------------------------------------------------------------> <!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+-------------------------------------------------------------------------------------> <!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+-------------------------------------------------------------------------------------> <!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+------------------------------------------------------------------------------------->
+</file>
+
+<file path=".kiro/steering/stepbystep.md">
+---
+inclusion: always
+---
+
+# Development Workflow Guidelines
+
+## Core Directive
+
+For complex development tasks (new features, architecture changes, refactoring), follow this systematic three-phase approach to ensure code quality and project consistency.
+
+## When to Apply
+
+**Required for:**
+- New feature development
+- Bug fixes affecting multiple files
+- Code refactoring and architecture changes
+- Performance optimization work
+
+**Not required for:**
+- Simple documentation updates
+- Minor styling adjustments
+- Single configuration file changes
+
+## Phase 1: Analysis & Discovery
+
+### File Discovery
+- Use `grepSearch` and `fileSearch` to locate relevant files
+- Examine existing implementations for similar features
+- Identify all files that may need modification
+
+### Convention Analysis
+- Document naming conventions (PascalCase components, camelCase hooks)
+- Note architectural patterns (Clean Architecture, dependency injection)
+- Identify styling approaches (Tailwind classes, component patterns)
+- Review error handling and validation patterns
+
+### Output Format
+```
+**Relevant Files:**
+- path/to/file: purpose and relevance
+
+**Conventions Identified:**
+- Naming: specific patterns found
+- Architecture: layer organization
+- Patterns: common implementations
+```
+
+## Phase 2: Implementation Planning
+
+### Planning Requirements
+- Break work into logical modules/components
+- Define specific, testable acceptance criteria
+- Consider dependencies and integration points
+- Plan for error handling and edge cases
+
+### Output Format
+```
+## Implementation Plan
+
+### Component: [Name]
+**Purpose:** Brief description
+**Tasks:**
+- [ ] Specific implementation step
+- [ ] Another specific step
+
+**Acceptance Criteria:**
+- [ ] Measurable success criterion
+- [ ] Performance/quality requirement
+```
+
+## Phase 3: Implementation
+
+### Quality Standards
+- Follow established code conventions from Phase 1
+- Implement minimal, focused solutions
+- Validate each acceptance criterion
+- Ensure proper TypeScript typing
+- Add appropriate error handling
+
+### Validation Checklist
+- [ ] All acceptance criteria met
+- [ ] Code follows project conventions
+- [ ] TypeScript types are correct
+- [ ] Error handling implemented
+- [ ] Integration points tested
+
+## AI Mafia Game Specific Guidelines
+
+### Component Organization
+- Game logic in `src/domain/` (Clean Architecture)
+- UI components in `src/components/`
+- AI integration in `src/adapters/gateways/`
+- Shared utilities in `src/lib/`
+
+### AI Integration Patterns
+- Define AI behavior interfaces in domain layer
+- Implement AI service adapters in infrastructure layer
+- Keep game rules AI-service agnostic
+- Handle AI failures gracefully with fallbacks
+
+### State Management
+- Use Zustand for game state
+- React Query for server state
+- Local state for UI-only concerns
+- Maintain clean separation between layers
+
+### Performance Considerations
+- Target <200ms response times for game actions
+- Implement proper loading states
+- Use React.memo for expensive components
+- Lazy load non-critical features<!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+-------------------------------------------------------------------------------------> <!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+-------------------------------------------------------------------------------------> <!------------------------------------------------------------------------------------
+   Add Rules to this file or a short description and have Kiro refine them for you:   
+------------------------------------------------------------------------------------->
+</file>
+
+<file path="components.json">
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "default",
+  "rsc": true,
+  "tsx": true,
+  "tailwind": {
+    "config": "tailwind.config.ts",
+    "css": "src/app/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@/components",
+    "utils": "@/lib/utils",
+    "ui": "@/components/ui",
+    "lib": "@/lib",
+    "hooks": "@/hooks"
+  }
+}
+</file>
+
+<file path="eslint.config.mjs">
+import { dirname } from 'path';
+import { fileURLToPath } from 'url';
+import { FlatCompat } from '@eslint/eslintrc';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+const compat = new FlatCompat({
+  baseDirectory: __dirname,
+});
+
+const eslintConfig = [
+  ...compat.extends('next/core-web-vitals', 'next/typescript'),
+  {
+    rules: {
+      '@typescript-eslint/no-empty-object-type': 'off',
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/no-unused-vars': 'off',
+    },
+  },
+];
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from 'next';
+
+const nextConfig: NextConfig = {
+  /* config options here */
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
+  images: {
+    remotePatterns: [
+      {
+        hostname: '**',
+      },
+    ],
+  },
+};
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "t1",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "next": "15.1.0",
+    "next-themes": "^0.4.3",
+    "server-only": "0.0.1",
+    "@radix-ui/react-accordion": "^1.2.3",
+    "@radix-ui/react-avatar": "^1.1.2",
+    "@radix-ui/react-checkbox": "^1.1.1",
+    "@radix-ui/react-dialog": "^1.1.4",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
+    "@radix-ui/react-label": "^2.1.0",
+    "@radix-ui/react-select": "^2.1.4",
+    "@radix-ui/react-separator": "^1.1.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.6",
+    "autoprefixer": "10.4.20",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "@hookform/resolvers": "^4",
+    "react-use": "^17",
+    "ts-pattern": "^5",
+    "es-toolkit": "^1",
+    "lucide-react": "^0.469.0",
+    "zod": "^3",
+    "zustand": "^4",
+    "date-fns": "^4",
+    "react-hook-form": "^7",
+    "@tanstack/react-query": "^5",
+    "framer-motion": "^11",
+    "axios": "^1.7.9"
+  },
+  "devDependencies": {
+    "typescript": "^5",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.1.0",
+    "@eslint/eslintrc": "^3",
+    "postcss": "^8",
+    "tailwindcss": "^3.4.1",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss-animate": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}
+</file>
+
+<file path="postcss.config.mjs">
+/** @type {import('postcss-load-config').Config} */
+const config = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="README.md">
+이 프로젝트는 [`EasyNext`](https://github.com/easynext/easynext)를 사용해 생성된 [Next.js](https://nextjs.org) 프로젝트입니다.
+
+## Getting Started
+
+개발 서버를 실행합니다.<br/>
+환경에 따른 명령어를 사용해주세요.
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+브라우저에서 [http://localhost:3000](http://localhost:3000)을 열어 결과를 확인할 수 있습니다.
+
+`app/page.tsx` 파일을 수정하여 페이지를 편집할 수 있습니다. 파일을 수정하면 자동으로 페이지가 업데이트됩니다.
+
+## 기본 포함 라이브러리
+
+- [Next.js](https://nextjs.org)
+- [React](https://react.dev)
+- [Tailwind CSS](https://tailwindcss.com)
+- [TypeScript](https://www.typescriptlang.org)
+- [ESLint](https://eslint.org)
+- [Prettier](https://prettier.io)
+- [Shadcn UI](https://ui.shadcn.com)
+- [Lucide Icon](https://lucide.dev)
+- [date-fns](https://date-fns.org)
+- [react-use](https://github.com/streamich/react-use)
+- [es-toolkit](https://github.com/toss/es-toolkit)
+- [Zod](https://zod.dev)
+- [React Query](https://tanstack.com/query/latest)
+- [React Hook Form](https://react-hook-form.com)
+- [TS Pattern](https://github.com/gvergnaud/ts-pattern)
+
+## 사용 가능한 명령어
+
+한글버전 사용
+
+```sh
+easynext lang ko
+```
+
+최신버전으로 업데이트
+
+```sh
+npm i -g @easynext/cli@latest
+# or
+yarn add -g @easynext/cli@latest
+# or
+pnpm add -g @easynext/cli@latest
+```
+
+Supabase 설정
+
+```sh
+easynext supabase
+```
+
+Next-Auth 설정
+
+```sh
+easynext auth
+
+# ID,PW 로그인
+easynext auth idpw
+# 카카오 로그인
+easynext auth kakao
+```
+
+유용한 서비스 연동
+
+```sh
+# Google Analytics
+easynext gtag
+
+# Microsoft Clarity
+easynext clarity
+
+# ChannelIO
+easynext channelio
+
+# Sentry
+easynext sentry
+
+# Google Adsense
+easynext adsense
+```
+</file>
+
+<file path="src/app/globals.css">
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+    --radius: 0.5rem;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* WhichGame Dark Theme */
+@layer base {
+  body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #0a0a0a;
+    color: #e0e0e0;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .wg-card-hover {
+    @apply transition-transform duration-200 hover:-translate-y-1;
+  }
+  
+  .wg-transition-fast {
+    @apply transition-all duration-200;
+  }
+  
+  .wg-transition-normal {
+    @apply transition-all duration-300;
+  }
+}
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata } from 'next';
+import { Noto_Sans_KR } from 'next/font/google';
+import './globals.css';
+import Providers from './providers';
+
+const notoSansKr = Noto_Sans_KR({
+  variable: '--font-noto-sans-kr',
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
+  display: 'swap',
+});
+
+export const metadata: Metadata = {
+  title: 'WhichGame - 게임 커뮤니티 플랫폼',
+  description: '게이머와 게임 제작자가 소통하는 커뮤니티',
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html suppressHydrationWarning lang="ko">
+      <body className={`${notoSansKr.variable} font-sans antialiased`}>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/app/page.tsx">
+'use client';
+
+import Header from '@/components/layout/Header';
+import SalesSection from '@/components/home/SalesSection';
+import RecommendSection from '@/components/home/RecommendSection';
+import PartnerSection from '@/components/home/PartnerSection';
+
+export default function Home() {
+  return (
+    <div className="min-h-screen bg-wg-bg text-wg-text">
+      <Header />
+      
+      <main className="py-8 px-6 max-w-[1280px] mx-auto">
+        <SalesSection />
+        <RecommendSection />
+        <PartnerSection />
+      </main>
+    </div>
+  );
+}
+</file>
+
+<file path="src/app/providers.tsx">
+// In Next.js, this file would be called: app/providers.tsx
+'use client';
+
+// Since QueryClientProvider relies on useContext under the hood, we have to put 'use client' on top
+import {
+  isServer,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query';
+import { ThemeProvider } from 'next-themes';
+
+function makeQueryClient() {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        // With SSR, we usually want to set some default staleTime
+        // above 0 to avoid refetching immediately on the client
+        staleTime: 60 * 1000,
+      },
+    },
+  });
+}
+
+let browserQueryClient: QueryClient | undefined = undefined;
+
+function getQueryClient() {
+  if (isServer) {
+    // Server: always make a new query client
+    return makeQueryClient();
+  } else {
+    // Browser: make a new query client if we don't already have one
+    // This is very important, so we don't re-make a new client if React
+    // suspends during the initial render. This may not be needed if we
+    // have a suspense boundary BELOW the creation of the query client
+    if (!browserQueryClient) browserQueryClient = makeQueryClient();
+    return browserQueryClient;
+  }
+}
+
+export default function Providers({ children }: { children: React.ReactNode }) {
+  // NOTE: Avoid useState when initializing the query client if you don't
+  //       have a suspense boundary between this and the code that may
+  //       suspend because React will throw away the client on the initial
+  //       render if it suspends and there is no boundary
+  const queryClient = getQueryClient();
+
+  return (
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="system"
+      enableSystem
+      disableTransitionOnChange
+    >
+      <QueryClientProvider client={queryClient}>{children}</QueryClientProvider>
+    </ThemeProvider>
+  );
+}
+</file>
+
+<file path="src/components/home/AchievementCard.tsx">
+import Link from 'next/link';
+import { Award, Crown, type LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface AchievementCardProps {
+  username: string;
+  achievementName: string;
+  achievementDescription: string;
+  achievementIcon: LucideIcon;
+  isFirstAchievement: boolean;
+  viewAllLink?: string;
+  className?: string;
+}
+
+export default function AchievementCard({
+  username,
+  achievementName,
+  achievementDescription,
+  achievementIcon: Icon,
+  isFirstAchievement,
+  viewAllLink = '/achievements',
+  className,
+}: AchievementCardProps) {
+  return (
+    <div
+      className={cn(
+        'relative bg-wg-card p-5 rounded-lg border-2 border-wg-gold overflow-hidden wg-card-hover',
+        className
+      )}
+    >
+      {/* Gold decoration in top-right corner */}
+      <div className="absolute top-0 right-0 w-20 h-20 bg-wg-gold transform rotate-45 translate-x-10 -translate-y-10 z-0" />
+
+      {/* Header */}
+      <div className="relative z-10 flex items-center justify-between mb-3">
+        <h3 className="text-xl font-bold flex items-center">
+          <Award className="mr-2 text-yellow-400" />
+          <span className="text-wg-cyan font-bold">{username}</span>
+          <span className="ml-1">님이 업적을 달성하셨습니다!</span>
+        </h3>
+      </div>
+
+      {/* Achievement Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center h-40 text-center">
+        <Icon className="text-wg-gold text-[2.5rem] mb-4" />
+        <h4 className="font-bold text-xl text-white">{achievementName}</h4>
+        <p className="text-sm text-gray-300 mt-2">{achievementDescription}</p>
+        
+        {isFirstAchievement && (
+          <div className="mt-2 inline-flex items-center bg-wg-gold/20 border border-wg-gold text-wg-gold rounded-full px-3 py-1 font-bold text-sm">
+            <Crown className="w-4 h-4 mr-1" />
+            최초 달성
+          </div>
+        )}
+      </div>
+
+      {/* Footer */}
+      <div className="relative z-10 mt-5 text-center">
+        <p className="text-sm text-gray-400">
+          최초 달성자 단 한 명만이 얻을 수 있는 업적입니다
+        </p>
+        <Link
+          href={viewAllLink}
+          className="block mt-2 text-blue-400 hover:underline text-sm wg-transition-fast"
+        >
+          현재까지 달성된 히든 업적 보기
+        </Link>
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/home/GameCard.tsx">
+import Image from 'next/image';
+import Link from 'next/link';
+import { type LucideIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import RefreshIcon from '@/components/shared/RefreshIcon';
+
+interface GameCardProps {
+  type: 'gamer' | 'maker' | 'goat';
+  title: string;
+  gameTitle: string;
+  gameImage: string;
+  likesCount: number;
+  icon: LucideIcon;
+  iconColor: string;
+  showRefresh?: boolean;
+  showWriteLink?: boolean;
+  onRefresh?: () => void;
+  onWriteClick?: () => void;
+  className?: string;
+}
+
+export default function GameCard({
+  type,
+  title,
+  gameTitle,
+  gameImage,
+  likesCount,
+  icon: Icon,
+  iconColor,
+  showRefresh = true,
+  showWriteLink = true,
+  onRefresh,
+  onWriteClick,
+  className,
+}: GameCardProps) {
+  return (
+    <div
+      className={cn(
+        'bg-wg-card p-5 rounded-lg wg-card-hover',
+        className
+      )}
+    >
+      {/* Header */}
+      <div className="flex items-center justify-between mb-3">
+        <h3 className="text-xl font-bold flex items-center">
+          <Icon className={cn('mr-2', iconColor)} />
+          {title}
+        </h3>
+        <div className="flex items-center gap-3">
+          {showWriteLink && (
+            <Link
+              href={`/write/${type}`}
+              onClick={onWriteClick}
+              className="text-xs text-wg-cyan hover:text-wg-cyan-hover hover:underline wg-transition-fast"
+            >
+              작성하러 가기
+            </Link>
+          )}
+          {showRefresh && <RefreshIcon onClick={onRefresh} />}
+        </div>
+      </div>
+
+      {/* Game Title Badge */}
+      <div className="inline-flex items-center bg-wg-cyan/15 border border-wg-cyan rounded px-2 py-1 mb-3">
+        <Icon className="w-4 h-4 mr-2 text-wg-cyan" />
+        <span className="text-sm font-semibold text-wg-cyan">{gameTitle}</span>
+      </div>
+
+      {/* Game Image */}
+      <div className="relative w-full h-40 bg-gray-700 rounded-md overflow-hidden mb-4">
+        <Image
+          src={gameImage}
+          alt={`${gameTitle} 이미지`}
+          fill
+          className="object-cover"
+        />
+      </div>
+
+      {/* Likes Counter */}
+      <div className="flex items-center bg-white/10 rounded-lg px-2.5 py-1.5 mb-2.5 w-fit">
+        <Image
+          src="https://page.gensparksite.com/v1/base64_upload/b5efc86f844f77b4b1966b1cef3103a1"
+          alt="좋아요"
+          width={24}
+          height={24}
+          className="mr-2"
+        />
+        <span className="text-sm font-bold text-white">{likesCount}개</span>
+      </div>
+
+      {/* Review Area */}
+      <div className="bg-white/5 border border-white/10 rounded-md p-3">
+        <p className="text-sm text-gray-400 mb-2">
+          {type === 'gamer' && '여기에 게임 리뷰를 작성하세요'}
+          {type === 'maker' && '게임 개발자/제작자 리뷰'}
+          {type === 'goat' && 'GOAT 게임 리뷰'}
+        </p>
+        <textarea
+          className="w-full bg-transparent border border-gray-700 rounded-md p-2 text-sm text-wg-text focus:outline-none focus:border-wg-cyan wg-transition-normal resize-none"
+          placeholder={
+            type === 'gamer'
+              ? '이 게임에 대한 리뷰와 점수를 남겨주세요...'
+              : type === 'maker'
+              ? '이 게임 제작자에 대한 평가를 남겨주세요...'
+              : '지난달 최고의 게임에 대한 리뷰를 남겨주세요...'
+          }
+          rows={3}
+        />
+      </div>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/home/PartnerSection.tsx">
+import Link from 'next/link';
+import { Users } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface PartnerSectionProps {
+  className?: string;
+}
+
+export default function PartnerSection({ className }: PartnerSectionProps) {
+  return (
+    <section className={cn('bg-wg-card p-6 rounded-lg', className)}>
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Left - Partner Recruitment */}
+        <div className="flex-1 flex items-center gap-6">
+          <div className="flex-shrink-0">
+            <Users className="text-blue-400 w-24 h-24" />
+          </div>
+          <div className="flex-1">
+            <h2 className="text-xl font-bold mb-2 text-wg-cyan">
+              땃쥐 파트너스를 모집합니다!
+            </h2>
+            <p className="mb-2 text-wg-text">
+              7인 이상의 디코방을 운영하고 있는 당신!
+            </p>
+            <p className="mb-4 text-wg-text">우리가 찾고 있는 인재입니다!</p>
+            <Link href="/partners/apply">
+              <button className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-full font-medium wg-transition-normal">
+                지금 신청하기
+              </button>
+            </Link>
+          </div>
+        </div>
+
+        {/* Right - Discord Server Button */}
+        <div className="flex-1 flex justify-center items-center">
+          <Link
+            href="https://discord.gg/whichgame"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-wg-discord hover:bg-wg-discord-hover hover:shadow-lg transform hover:-translate-y-1 wg-transition-normal py-4 px-8 rounded-lg flex items-center justify-center text-white font-bold text-xl"
+          >
+            <svg
+              className="w-8 h-8 mr-3"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03zM8.02 15.33c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418z" />
+            </svg>
+            <div className="text-left">
+              <div>땃쥐 디스코드 서버</div>
+              <div className="text-sm font-normal">함께 게임을 즐겨보세요!</div>
+            </div>
+          </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/home/RecommendSection.tsx">
+import Image from 'next/image';
+import { ThumbsUp } from 'lucide-react';
+import { cn } from '@/lib/utils';
+import RefreshIcon from '@/components/shared/RefreshIcon';
+
+interface RecommendSectionProps {
+  className?: string;
+}
+
+export default function RecommendSection({ className }: RecommendSectionProps) {
+  return (
+    <section className={cn('mb-12 p-6 bg-wg-card rounded-lg', className)}>
+      {/* Section Header */}
+      <div className="flex items-center justify-between mb-4">
+        <h2 className="text-2xl font-bold flex items-center">
+          <ThumbsUp className="mr-3 text-yellow-500" />
+          선호하실 만한 게임을 추천드릴게요!
+        </h2>
+        <RefreshIcon className="text-lg" />
+      </div>
+
+      {/* Grid */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        {/* Game Recommendation 1 */}
+        <div className="p-3 bg-gray-800 rounded-md">
+          <div className="relative h-32 bg-gray-700 rounded-md overflow-hidden mb-2">
+            <Image
+              src="https://www.genspark.ai/image_placeholder.png"
+              alt="추천 게임"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <h4 className="font-medium text-white">준비중입니다</h4>
+          <p className="text-xs text-gray-400">준비중입니다</p>
+        </div>
+
+        {/* Game Recommendation 2 */}
+        <div className="p-3 bg-gray-800 rounded-md">
+          <div className="relative h-32 bg-gray-700 rounded-md overflow-hidden mb-2">
+            <Image
+              src="https://www.genspark.ai/image_placeholder.png"
+              alt="추천 게임"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <h4 className="font-medium text-white">준비중입니다</h4>
+          <p className="text-xs text-gray-400">준비중입니다</p>
+        </div>
+
+        {/* Advertisement Section */}
+        <div className="col-span-1 md:col-span-2 p-3 bg-[#262626] rounded-md border-l-4 border-wg-ad-border">
+          <div className="relative h-32 bg-gray-700 rounded-md overflow-hidden mb-2">
+            <Image
+              src="https://www.genspark.ai/image_placeholder.png"
+              alt="광고"
+              fill
+              className="object-cover"
+            />
+          </div>
+          <h4 className="font-medium text-white">광고주(신) 제목</h4>
+          <p className="text-xs text-gray-400 mb-3">광고주(신) 부제목</p>
+          <p className="text-xs text-wg-ad-border font-medium">광고 문의</p>
+        </div>
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/home/SalesSection.tsx">
+import { Gamepad, Code, Trophy, Dice1 } from 'lucide-react';
+import GameCard from './GameCard';
+import AchievementCard from './AchievementCard';
+import { cn } from '@/lib/utils';
+
+interface SalesSectionProps {
+  className?: string;
+}
+
+export default function SalesSection({ className }: SalesSectionProps) {
+  return (
+    <section className={cn('mb-12', className)}>
+      <h2 className="text-2xl font-bold mb-6">
+        게이머 & 제작자 & 지난달의 GOAT
+      </h2>
+      
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* 게이머의 영업 */}
+        <GameCard
+          type="gamer"
+          title="게이머의 영업"
+          gameTitle="엘든 링"
+          gameImage="https://www.genspark.ai/image_placeholder.png"
+          likesCount={20}
+          icon={Gamepad}
+          iconColor="text-purple-500"
+          showRefresh
+          showWriteLink
+        />
+
+        {/* 제작자의 영업 */}
+        <GameCard
+          type="maker"
+          title="제작자의 영업"
+          gameTitle="스타듀 밸리"
+          gameImage="https://www.genspark.ai/image_placeholder.png"
+          likesCount={5}
+          icon={Code}
+          iconColor="text-blue-500"
+          showRefresh
+          showWriteLink
+        />
+
+        {/* 지난달의 GOAT 리뷰 */}
+        <GameCard
+          type="goat"
+          title="지난달의 GOAT 리뷰"
+          gameTitle="발더스 게이트 3"
+          gameImage="https://www.genspark.ai/image_placeholder.png"
+          likesCount={95}
+          icon={Trophy}
+          iconColor="text-yellow-500"
+          showRefresh={false}
+          showWriteLink={false}
+        />
+
+        {/* 히든 업적 */}
+        <AchievementCard
+          username="#2123"
+          achievementName="777의 사나이"
+          achievementDescription="777자로 리뷰를 작성하셨군요!"
+          achievementIcon={Dice1}
+          isFirstAchievement
+        />
+      </div>
+    </section>
+  );
+}
+</file>
+
+<file path="src/components/layout/Header.tsx">
+import Image from 'next/image';
+import Link from 'next/link';
+import { cn } from '@/lib/utils';
+import LiveActivityBanner from '@/components/shared/LiveActivityBanner';
+import NotificationIcon from '@/components/shared/NotificationIcon';
+import type { NavItem } from '@/types/user';
+
+interface HeaderProps {
+  className?: string;
+  activeUsers?: number;
+  notificationCount?: number;
+}
+
+const navItems: NavItem[] = [
+  { label: '내가 즐긴 게임', href: '/my-games' },
+  { label: '우리 게임 펀딩해주세요', href: '/funding' },
+  { label: '게임 메이트', href: '/mates' },
+  { label: '게임 메이커', href: '/makers' },
+  { label: 'About Us', href: '/about' },
+];
+
+export default function Header({
+  className,
+  activeUsers = 247,
+  notificationCount = 2,
+}: HeaderProps) {
+  return (
+    <header
+      className={cn(
+        'py-4 px-6 flex items-center justify-between border-b border-gray-800',
+        className
+      )}
+    >
+      {/* Left section */}
+      <div className="flex items-center gap-4">
+        <Link href="/" className="logo">
+          <Image
+            src="https://page.gensparksite.com/v1/base64_upload/5ea1ae9d265c7d632207adb00c9311c0"
+            alt="WhichGame 로고"
+            width={120}
+            height={32}
+            className="h-8 w-auto"
+          />
+        </Link>
+        
+        <Link href="/login">
+          <button className="bg-wg-cyan hover:bg-wg-cyan-hover text-black py-1 px-4 rounded-full text-sm font-medium wg-transition-normal">
+            로그인
+          </button>
+        </Link>
+        
+        <NotificationIcon count={notificationCount} />
+      </div>
+
+      {/* Right section */}
+      <div className="flex items-center gap-6">
+        <LiveActivityBanner activeUsers={activeUsers} />
+        
+        <nav className="flex gap-8">
+          {navItems.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="font-medium text-wg-text hover:text-wg-cyan wg-transition-normal cursor-pointer"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}
+</file>
+
+<file path="src/components/shared/LiveActivityBanner.tsx">
+import { cn } from '@/lib/utils';
+
+interface LiveActivityBannerProps {
+  activeUsers: number;
+  className?: string;
+}
+
+export default function LiveActivityBanner({
+  activeUsers,
+  className,
+}: LiveActivityBannerProps) {
+  return (
+    <div
+      className={cn(
+        'flex items-center bg-white text-black rounded-full px-3 py-1.5 shadow-md',
+        className
+      )}
+    >
+      <div className="relative mr-2">
+        {/* Pulse dot */}
+        <div className="w-2.5 h-2.5 bg-wg-status-red rounded-full animate-pulse" />
+        {/* Pulse ring */}
+        <div className="absolute top-0 left-0 w-2.5 h-2.5 bg-wg-status-red rounded-full animate-pulse-ring" />
+      </div>
+      <span className="text-sm font-semibold whitespace-nowrap">
+        지금 {activeUsers}명의 게이머가 활동 중
+      </span>
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/shared/NotificationIcon.tsx">
+import { Bell } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface NotificationIconProps {
+  count: number;
+  className?: string;
+  onClick?: () => void;
+}
+
+export default function NotificationIcon({
+  count,
+  className,
+  onClick,
+}: NotificationIconProps) {
+  return (
+    <button
+      onClick={onClick}
+      className={cn(
+        'relative wg-transition-normal hover:scale-110 cursor-pointer',
+        className
+      )}
+      aria-label={`${count}개의 읽지 않은 알림`}
+    >
+      <Bell className="w-5 h-5 text-gray-300 hover:text-white" />
+      {count > 0 && (
+        <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
+          {count > 99 ? '99+' : count}
+        </span>
+      )}
+    </button>
+  );
+}
+</file>
+
+<file path="src/components/shared/RefreshIcon.tsx">
+import { RefreshCw } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+interface RefreshIconProps {
+  onClick?: () => void;
+  className?: string;
+  isLoading?: boolean;
+}
+
+export default function RefreshIcon({
+  onClick,
+  className,
+  isLoading = false,
+}: RefreshIconProps) {
+  return (
+    <button
+      onClick={onClick}
+      disabled={isLoading}
+      className={cn(
+        'cursor-pointer wg-transition-normal text-gray-400 hover:text-white',
+        'hover:rotate-180',
+        isLoading && 'animate-spin',
+        className
+      )}
+      aria-label="새로고침"
+    >
+      <RefreshCw className="w-4 h-4" />
+    </button>
+  );
+}
+</file>
+
+<file path="src/components/ui/accordion.tsx">
+"use client"
+
+import * as React from "react"
+import * as AccordionPrimitive from "@radix-ui/react-accordion"
+import { ChevronDown } from "lucide-react"
+
+import { cn } from "@/lib/utils"
+
+const Accordion = AccordionPrimitive.Root
+
+const AccordionItem = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Item>
+>(({ className, ...props }, ref) => (
+  <AccordionPrimitive.Item
+    ref={ref}
+    className={cn("border-b", className)}
+    {...props}
+  />
+))
+AccordionItem.displayName = "AccordionItem"
+
+const AccordionTrigger = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Header className="flex">
+    <AccordionPrimitive.Trigger
+      ref={ref}
+      className={cn(
+        "flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180",
+        className
+      )}
+      {...props}
+    >
+      {children}
+      <ChevronDown className="h-4 w-4 shrink-0 transition-transform duration-200" />
+    </AccordionPrimitive.Trigger>
+  </AccordionPrimitive.Header>
+))
+AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName
+
+const AccordionContent = React.forwardRef<
+  React.ElementRef<typeof AccordionPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Content>
+>(({ className, children, ...props }, ref) => (
+  <AccordionPrimitive.Content
+    ref={ref}
+    className="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    {...props}
+  >
+    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+  </AccordionPrimitive.Content>
+))
+
+AccordionContent.displayName = AccordionPrimitive.Content.displayName
+
+export { Accordion, AccordionItem, AccordionTrigger, AccordionContent }
+</file>
+
+<file path="src/components/ui/avatar.tsx">
+"use client"
+
+import * as React from "react"
+import * as AvatarPrimitive from "@radix-ui/react-avatar"
+
+import { cn } from "@/lib/utils"
+
+const Avatar = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full",
+      className
+    )}
+    {...props}
+  />
+))
+Avatar.displayName = AvatarPrimitive.Root.displayName
+
+const AvatarImage = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Image>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Image>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Image
+    ref={ref}
+    className={cn("aspect-square h-full w-full", className)}
+    {...props}
+  />
+))
+AvatarImage.displayName = AvatarPrimitive.Image.displayName
+
+const AvatarFallback = React.forwardRef<
+  React.ElementRef<typeof AvatarPrimitive.Fallback>,
+  React.ComponentPropsWithoutRef<typeof AvatarPrimitive.Fallback>
+>(({ className, ...props }, ref) => (
+  <AvatarPrimitive.Fallback
+    ref={ref}
+    className={cn(
+      "flex h-full w-full items-center justify-center rounded-full bg-muted",
+      className
+    )}
+    {...props}
+  />
+))
+AvatarFallback.displayName = AvatarPrimitive.Fallback.displayName
+
+export { Avatar, AvatarImage, AvatarFallback }
+</file>
+
+<file path="src/components/ui/badge.tsx">
+import * as React from "react";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const badgeVariants = cva(
+  "inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+  {
+    variants: {
+      variant: {
+        default:
+          "border-transparent bg-primary text-primary-foreground hover:bg-primary/80",
+        secondary:
+          "border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        destructive:
+          "border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80",
+        outline: "text-foreground",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  },
+);
+
+export interface BadgeProps
+  extends React.HTMLAttributes<HTMLDivElement>,
+    VariantProps<typeof badgeVariants> {}
+
+function Badge({ className, variant, ...props }: BadgeProps) {
+  return (
+    <div className={cn(badgeVariants({ variant }), className)} {...props} />
+  );
+}
+
+export { Badge, badgeVariants };
+</file>
+
+<file path="src/components/ui/button.tsx">
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const buttonVariants = cva(
+  "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50",
+  {
+    variants: {
+      variant: {
+        default: "bg-primary text-primary-foreground hover:bg-primary/90",
+        destructive:
+          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
+        outline:
+          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        secondary:
+          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
+        link: "text-primary underline-offset-4 hover:underline",
+      },
+      size: {
+        default: "h-10 px-4 py-2",
+        sm: "h-9 rounded-md px-3",
+        lg: "h-11 rounded-md px-8",
+        icon: "h-10 w-10",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+      size: "default",
+    },
+  },
+);
+
+export interface ButtonProps
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    VariantProps<typeof buttonVariants> {
+  asChild?: boolean;
+}
+
+const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+  ({ className, variant, size, asChild = false, ...props }, ref) => {
+    const Comp = asChild ? Slot : "button";
+    return (
+      <Comp
+        className={cn(buttonVariants({ variant, size, className }))}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Button.displayName = "Button";
+
+export { Button, buttonVariants };
+</file>
+
+<file path="src/components/ui/card.tsx">
+import * as React from "react"
+
+import { cn } from "@/lib/utils"
+
+const Card = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "rounded-lg border bg-card text-card-foreground shadow-sm",
+      className
+    )}
+    {...props}
+  />
+))
+Card.displayName = "Card"
+
+const CardHeader = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex flex-col space-y-1.5 p-6", className)}
+    {...props}
+  />
+))
+CardHeader.displayName = "CardHeader"
+
+const CardTitle = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn(
+      "text-2xl font-semibold leading-none tracking-tight",
+      className
+    )}
+    {...props}
+  />
+))
+CardTitle.displayName = "CardTitle"
+
+const CardDescription = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("text-sm text-muted-foreground", className)}
+    {...props}
+  />
+))
+CardDescription.displayName = "CardDescription"
+
+const CardContent = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div ref={ref} className={cn("p-6 pt-0", className)} {...props} />
+))
+CardContent.displayName = "CardContent"
+
+const CardFooter = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => (
+  <div
+    ref={ref}
+    className={cn("flex items-center p-6 pt-0", className)}
+    {...props}
+  />
+))
+CardFooter.displayName = "CardFooter"
+
+export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+</file>
+
+<file path="src/components/ui/checkbox.tsx">
+"use client";
+
+import * as React from "react";
+import * as CheckboxPrimitive from "@radix-ui/react-checkbox";
+import { Check } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+const Checkbox = React.forwardRef<
+  React.ElementRef<typeof CheckboxPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <CheckboxPrimitive.Root
+    ref={ref}
+    className={cn(
+      "peer h-4 w-4 shrink-0 rounded-sm border border-primary ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 data-[state=checked]:bg-primary data-[state=checked]:text-primary-foreground",
+      className,
+    )}
+    {...props}
+  >
+    <CheckboxPrimitive.Indicator
+      className={cn("flex items-center justify-center text-current")}
+    >
+      <Check className="h-4 w-4" />
+    </CheckboxPrimitive.Indicator>
+  </CheckboxPrimitive.Root>
+));
+Checkbox.displayName = CheckboxPrimitive.Root.displayName;
+
+export { Checkbox };
+</file>
+
+<file path="src/components/ui/dropdown-menu.tsx">
+"use client";
+
+import * as React from "react";
+import * as DropdownMenuPrimitive from "@radix-ui/react-dropdown-menu";
+import { Check, ChevronRight, Circle } from "lucide-react";
+
+import { cn } from "@/lib/utils";
+
+const DropdownMenu = DropdownMenuPrimitive.Root;
+
+const DropdownMenuTrigger = DropdownMenuPrimitive.Trigger;
+
+const DropdownMenuGroup = DropdownMenuPrimitive.Group;
+
+const DropdownMenuPortal = DropdownMenuPrimitive.Portal;
+
+const DropdownMenuSub = DropdownMenuPrimitive.Sub;
+
+const DropdownMenuRadioGroup = DropdownMenuPrimitive.RadioGroup;
+
+const DropdownMenuSubTrigger = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.SubTrigger>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubTrigger> & {
+    inset?: boolean;
+  }
+>(({ className, inset, children, ...props }, ref) => (
+  <DropdownMenuPrimitive.SubTrigger
+    ref={ref}
+    className={cn(
+      "flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none focus:bg-accent data-[state=open]:bg-accent",
+      inset && "pl-8",
+      className,
+    )}
+    {...props}
+  >
+    {children}
+    <ChevronRight className="ml-auto h-4 w-4" />
+  </DropdownMenuPrimitive.SubTrigger>
+));
+DropdownMenuSubTrigger.displayName =
+  DropdownMenuPrimitive.SubTrigger.displayName;
+
+const DropdownMenuSubContent = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.SubContent>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.SubContent>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.SubContent
+    ref={ref}
+    className={cn(
+      "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-lg data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+      className,
+    )}
+    {...props}
+  />
+));
+DropdownMenuSubContent.displayName =
+  DropdownMenuPrimitive.SubContent.displayName;
+
+const DropdownMenuContent = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Content>
+>(({ className, sideOffset = 4, ...props }, ref) => (
+  <DropdownMenuPrimitive.Portal>
+    <DropdownMenuPrimitive.Content
+      ref={ref}
+      sideOffset={sideOffset}
+      className={cn(
+        "z-50 min-w-[8rem] overflow-hidden rounded-md border bg-popover p-1 text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2",
+        className,
+      )}
+      {...props}
+    />
+  </DropdownMenuPrimitive.Portal>
+));
+DropdownMenuContent.displayName = DropdownMenuPrimitive.Content.displayName;
+
+const DropdownMenuItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Item> & {
+    inset?: boolean;
+  }
+>(({ className, inset, ...props }, ref) => (
+  <DropdownMenuPrimitive.Item
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      inset && "pl-8",
+      className,
+    )}
+    {...props}
+  />
+));
+DropdownMenuItem.displayName = DropdownMenuPrimitive.Item.displayName;
+
+const DropdownMenuCheckboxItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.CheckboxItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.CheckboxItem>
+>(({ className, children, checked, ...props }, ref) => (
+  <DropdownMenuPrimitive.CheckboxItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className,
+    )}
+    checked={checked}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.CheckboxItem>
+));
+DropdownMenuCheckboxItem.displayName =
+  DropdownMenuPrimitive.CheckboxItem.displayName;
+
+const DropdownMenuRadioItem = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.RadioItem>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.RadioItem>
+>(({ className, children, ...props }, ref) => (
+  <DropdownMenuPrimitive.RadioItem
+    ref={ref}
+    className={cn(
+      "relative flex cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none transition-colors focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50",
+      className,
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <DropdownMenuPrimitive.ItemIndicator>
+        <Circle className="h-2 w-2 fill-current" />
+      </DropdownMenuPrimitive.ItemIndicator>
+    </span>
+    {children}
+  </DropdownMenuPrimitive.RadioItem>
+));
+DropdownMenuRadioItem.displayName = DropdownMenuPrimitive.RadioItem.displayName;
+
+const DropdownMenuLabel = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Label> & {
+    inset?: boolean;
+  }
+>(({ className, inset, ...props }, ref) => (
+  <DropdownMenuPrimitive.Label
+    ref={ref}
+    className={cn(
+      "px-2 py-1.5 text-sm font-semibold",
+      inset && "pl-8",
+      className,
+    )}
+    {...props}
+  />
+));
+DropdownMenuLabel.displayName = DropdownMenuPrimitive.Label.displayName;
+
+const DropdownMenuSeparator = React.forwardRef<
+  React.ElementRef<typeof DropdownMenuPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof DropdownMenuPrimitive.Separator>
+>(({ className, ...props }, ref) => (
+  <DropdownMenuPrimitive.Separator
+    ref={ref}
+    className={cn("-mx-1 my-1 h-px bg-muted", className)}
+    {...props}
+  />
+));
+DropdownMenuSeparator.displayName = DropdownMenuPrimitive.Separator.displayName;
+
+const DropdownMenuShortcut = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement>) => {
+  return (
+    <span
+      className={cn("ml-auto text-xs tracking-widest opacity-60", className)}
+      {...props}
+    />
+  );
+};
+DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
+
+export {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuCheckboxItem,
+  DropdownMenuRadioItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuShortcut,
+  DropdownMenuGroup,
+  DropdownMenuPortal,
+  DropdownMenuSub,
+  DropdownMenuSubContent,
+  DropdownMenuSubTrigger,
+  DropdownMenuRadioGroup,
+};
+</file>
+
+<file path="src/components/ui/file-upload.tsx">
+"use client";
+
+import { cn } from "@/lib/utils";
+import { ChangeEvent, useRef } from "react";
+
+interface FileUploadProps extends React.HTMLAttributes<HTMLDivElement> {
+  onFileChange: (file: File) => void;
+  accept?: string;
+}
+
+export function FileUpload({
+  className,
+  onFileChange,
+  accept = "image/*",
+  children,
+  ...props
+}: FileUploadProps) {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  const handleClick = () => {
+    inputRef.current?.click();
+  };
+
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      onFileChange(file);
+    }
+  };
+
+  return (
+    <div
+      onClick={handleClick}
+      className={cn(
+        "cursor-pointer rounded-md border-2 border-dashed border-gray-300 p-4 hover:border-gray-400",
+        className
+      )}
+      {...props}
+    >
+      <input
+        type="file"
+        ref={inputRef}
+        onChange={handleChange}
+        accept={accept}
+        className="hidden"
+      />
+      {children}
+    </div>
+  );
+}
+</file>
+
+<file path="src/components/ui/form.tsx">
+'use client';
+
+import * as React from 'react';
+import * as LabelPrimitive from '@radix-ui/react-label';
+import { Slot } from '@radix-ui/react-slot';
+import {
+  Controller,
+  ControllerProps,
+  FieldPath,
+  FieldValues,
+  FormProvider,
+  useFormContext,
+} from 'react-hook-form';
+
+import { cn } from '@/lib/utils';
+import { Label } from '@/components/ui/label';
+
+const Form = FormProvider;
+
+type FormFieldContextValue<
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+> = {
+  name: TName;
+};
+
+const FormFieldContext = React.createContext<FormFieldContextValue>(
+  {} as FormFieldContextValue,
+);
+
+const FormField = <
+  TFieldValues extends FieldValues = FieldValues,
+  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+>({
+  ...props
+}: ControllerProps<TFieldValues, TName>) => {
+  return (
+    <FormFieldContext.Provider value={{ name: props.name }}>
+      <Controller {...props} />
+    </FormFieldContext.Provider>
+  );
+};
+
+const useFormField = () => {
+  const fieldContext = React.useContext(FormFieldContext);
+  const itemContext = React.useContext(FormItemContext);
+  const { getFieldState, formState } = useFormContext();
+
+  const fieldState = getFieldState(fieldContext.name, formState);
+
+  if (!fieldContext) {
+    throw new Error('useFormField should be used within <FormField>');
+  }
+
+  const { id } = itemContext;
+
+  return {
+    id,
+    name: fieldContext.name,
+    formItemId: `${id}-form-item`,
+    formDescriptionId: `${id}-form-item-description`,
+    formMessageId: `${id}-form-item-message`,
+    ...fieldState,
+  };
+};
+
+type FormItemContextValue = {
+  id: string;
+};
+
+const FormItemContext = React.createContext<FormItemContextValue>(
+  {} as FormItemContextValue,
+);
+
+const FormItem = React.forwardRef<
+  HTMLDivElement,
+  React.HTMLAttributes<HTMLDivElement>
+>(({ className, ...props }, ref) => {
+  const id = React.useId();
+
+  return (
+    <FormItemContext.Provider value={{ id }}>
+      <div ref={ref} className={cn('space-y-2', className)} {...props} />
+    </FormItemContext.Provider>
+  );
+});
+FormItem.displayName = 'FormItem';
+
+const FormLabel = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
+>(({ className, ...props }, ref) => {
+  const { error, formItemId } = useFormField();
+
+  return (
+    <Label
+      ref={ref}
+      className={cn(error && 'text-destructive', className)}
+      htmlFor={formItemId}
+      {...props}
+    />
+  );
+});
+FormLabel.displayName = 'FormLabel';
+
+const FormControl = React.forwardRef<
+  React.ElementRef<typeof Slot>,
+  React.ComponentPropsWithoutRef<typeof Slot>
+>(({ ...props }, ref) => {
+  const { error, formItemId, formDescriptionId, formMessageId } =
+    useFormField();
+
+  return (
+    <Slot
+      ref={ref}
+      id={formItemId}
+      aria-describedby={
+        !error
+          ? `${formDescriptionId}`
+          : `${formDescriptionId} ${formMessageId}`
+      }
+      aria-invalid={!!error}
+      {...props}
+    />
+  );
+});
+FormControl.displayName = 'FormControl';
+
+const FormDescription = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, ...props }, ref) => {
+  const { formDescriptionId } = useFormField();
+
+  return (
+    <p
+      ref={ref}
+      id={formDescriptionId}
+      className={cn('text-sm text-muted-foreground', className)}
+      {...props}
+    />
+  );
+});
+FormDescription.displayName = 'FormDescription';
+
+const FormMessage = React.forwardRef<
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
+>(({ className, children, ...props }, ref) => {
+  const { error, formMessageId } = useFormField();
+  const body = error ? String(error?.message) : children;
+
+  if (!body) {
+    return null;
+  }
+
+  return (
+    <p
+      ref={ref}
+      id={formMessageId}
+      className={cn('text-sm font-medium text-destructive', className)}
+      {...props}
+    >
+      {body}
+    </p>
+  );
+});
+FormMessage.displayName = 'FormMessage';
+
+export {
+  useFormField,
+  Form,
+  FormItem,
+  FormLabel,
+  FormControl,
+  FormDescription,
+  FormMessage,
+  FormField,
+};
+</file>
+
+<file path="src/components/ui/input.tsx">
+import * as React from "react";
+
+import { cn } from "@/lib/utils";
+
+export interface InputProps
+  extends React.InputHTMLAttributes<HTMLInputElement> {}
+
+const Input = React.forwardRef<HTMLInputElement, InputProps>(
+  ({ className, type, ...props }, ref) => {
+    return (
+      <input
+        type={type}
+        className={cn(
+          "flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+          className,
+        )}
+        ref={ref}
+        {...props}
+      />
+    );
+  },
+);
+Input.displayName = "Input";
+
+export { Input };
+</file>
+
+<file path="src/components/ui/label.tsx">
+"use client";
+
+import * as React from "react";
+import * as LabelPrimitive from "@radix-ui/react-label";
+import { cva, type VariantProps } from "class-variance-authority";
+
+import { cn } from "@/lib/utils";
+
+const labelVariants = cva(
+  "text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70",
+);
+
+const Label = React.forwardRef<
+  React.ElementRef<typeof LabelPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root> &
+    VariantProps<typeof labelVariants>
+>(({ className, ...props }, ref) => (
+  <LabelPrimitive.Root
+    ref={ref}
+    className={cn(labelVariants(), className)}
+    {...props}
+  />
+));
+Label.displayName = LabelPrimitive.Root.displayName;
+
+export { Label };
+</file>
+
+<file path="src/components/ui/select.tsx">
+'use client';
+
+import * as React from 'react';
+import * as SelectPrimitive from '@radix-ui/react-select';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
+
+const Select = SelectPrimitive.Root;
+
+const SelectGroup = SelectPrimitive.Group;
+
+const SelectValue = SelectPrimitive.Value;
+
+const SelectTrigger = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Trigger>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      'flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1',
+      className,
+    )}
+    {...props}
+  >
+    {children}
+    <SelectPrimitive.Icon asChild>
+      <ChevronDown className="h-4 w-4 opacity-50" />
+    </SelectPrimitive.Icon>
+  </SelectPrimitive.Trigger>
+));
+SelectTrigger.displayName = SelectPrimitive.Trigger.displayName;
+
+const SelectScrollUpButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollUpButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollUpButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollUpButton
+    ref={ref}
+    className={cn(
+      'flex cursor-default items-center justify-center py-1',
+      className,
+    )}
+    {...props}
+  >
+    <ChevronUp className="h-4 w-4" />
+  </SelectPrimitive.ScrollUpButton>
+));
+SelectScrollUpButton.displayName = SelectPrimitive.ScrollUpButton.displayName;
+
+const SelectScrollDownButton = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.ScrollDownButton>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.ScrollDownButton>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.ScrollDownButton
+    ref={ref}
+    className={cn(
+      'flex cursor-default items-center justify-center py-1',
+      className,
+    )}
+    {...props}
+  >
+    <ChevronDown className="h-4 w-4" />
+  </SelectPrimitive.ScrollDownButton>
+));
+SelectScrollDownButton.displayName =
+  SelectPrimitive.ScrollDownButton.displayName;
+
+const SelectContent = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Content>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Content>
+>(({ className, children, position = 'popper', ...props }, ref) => (
+  <SelectPrimitive.Portal>
+    <SelectPrimitive.Content
+      ref={ref}
+      className={cn(
+        'relative z-50 max-h-96 min-w-[8rem] overflow-hidden rounded-md border bg-popover text-popover-foreground shadow-md data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0 data-[state=closed]:zoom-out-95 data-[state=open]:zoom-in-95 data-[side=bottom]:slide-in-from-top-2 data-[side=left]:slide-in-from-right-2 data-[side=right]:slide-in-from-left-2 data-[side=top]:slide-in-from-bottom-2',
+        position === 'popper' &&
+          'data-[side=bottom]:translate-y-1 data-[side=left]:-translate-x-1 data-[side=right]:translate-x-1 data-[side=top]:-translate-y-1',
+        className,
+      )}
+      position={position}
+      {...props}
+    >
+      <SelectScrollUpButton />
+      <SelectPrimitive.Viewport
+        className={cn(
+          'p-1',
+          position === 'popper' &&
+            'h-[var(--radix-select-trigger-height)] w-full min-w-[var(--radix-select-trigger-width)]',
+        )}
+      >
+        {children}
+      </SelectPrimitive.Viewport>
+      <SelectScrollDownButton />
+    </SelectPrimitive.Content>
+  </SelectPrimitive.Portal>
+));
+SelectContent.displayName = SelectPrimitive.Content.displayName;
+
+const SelectLabel = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Label>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Label>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Label
+    ref={ref}
+    className={cn('py-1.5 pl-8 pr-2 text-sm font-semibold', className)}
+    {...props}
+  />
+));
+SelectLabel.displayName = SelectPrimitive.Label.displayName;
+
+const SelectItem = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Item>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
+>(({ className, children, ...props }, ref) => (
+  <SelectPrimitive.Item
+    ref={ref}
+    className={cn(
+      'relative flex w-full cursor-default select-none items-center rounded-sm py-1.5 pl-8 pr-2 text-sm outline-none focus:bg-accent focus:text-accent-foreground data-[disabled]:pointer-events-none data-[disabled]:opacity-50',
+      className,
+    )}
+    {...props}
+  >
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+      <SelectPrimitive.ItemIndicator>
+        <Check className="h-4 w-4" />
+      </SelectPrimitive.ItemIndicator>
+    </span>
+
+    <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
+  </SelectPrimitive.Item>
+));
+SelectItem.displayName = SelectPrimitive.Item.displayName;
+
+const SelectSeparator = React.forwardRef<
+  React.ElementRef<typeof SelectPrimitive.Separator>,
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Separator>
+>(({ className, ...props }, ref) => (
+  <SelectPrimitive.Separator
+    ref={ref}
+    className={cn('-mx-1 my-1 h-px bg-muted', className)}
+    {...props}
+  />
+));
+SelectSeparator.displayName = SelectPrimitive.Separator.displayName;
+
+export {
+  Select,
+  SelectGroup,
+  SelectValue,
+  SelectTrigger,
+  SelectContent,
+  SelectLabel,
+  SelectItem,
+  SelectSeparator,
+  SelectScrollUpButton,
+  SelectScrollDownButton,
+};
+</file>
+
+<file path="src/components/ui/separator.tsx">
+"use client"
+
+import * as React from "react"
+import * as SeparatorPrimitive from "@radix-ui/react-separator"
+
+import { cn } from "@/lib/utils"
+
+const Separator = React.forwardRef<
+  React.ElementRef<typeof SeparatorPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SeparatorPrimitive.Root>
+>(
+  (
+    { className, orientation = "horizontal", decorative = true, ...props },
+    ref
+  ) => (
+    <SeparatorPrimitive.Root
+      ref={ref}
+      decorative={decorative}
+      orientation={orientation}
+      className={cn(
+        "shrink-0 bg-border",
+        orientation === "horizontal" ? "h-[1px] w-full" : "h-full w-[1px]",
+        className
+      )}
+      {...props}
+    />
+  )
+)
+Separator.displayName = SeparatorPrimitive.Root.displayName
+
+export { Separator }
+</file>
+
+<file path="src/components/ui/sheet.tsx">
+'use client';
+
+import * as React from 'react';
+import * as SheetPrimitive from '@radix-ui/react-dialog';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { X } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
+
+const Sheet = SheetPrimitive.Root;
+
+const SheetTrigger = SheetPrimitive.Trigger;
+
+const SheetClose = SheetPrimitive.Close;
+
+const SheetPortal = SheetPrimitive.Portal;
+
+const SheetOverlay = React.forwardRef<
+  React.ElementRef<typeof SheetPrimitive.Overlay>,
+  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Overlay>
+>(({ className, ...props }, ref) => (
+  <SheetPrimitive.Overlay
+    className={cn(
+      'fixed inset-0 z-50 bg-black/80  data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0',
+      className,
+    )}
+    {...props}
+    ref={ref}
+  />
+));
+SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
+
+const sheetVariants = cva(
+  'fixed z-50 gap-4 bg-background p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500',
+  {
+    variants: {
+      side: {
+        top: 'inset-x-0 top-0 border-b data-[state=closed]:slide-out-to-top data-[state=open]:slide-in-from-top',
+        bottom:
+          'inset-x-0 bottom-0 border-t data-[state=closed]:slide-out-to-bottom data-[state=open]:slide-in-from-bottom',
+        left: 'inset-y-0 left-0 h-full w-3/4 border-r data-[state=closed]:slide-out-to-left data-[state=open]:slide-in-from-left sm:max-w-sm',
+        right:
+          'inset-y-0 right-0 h-full w-3/4  border-l data-[state=closed]:slide-out-to-right data-[state=open]:slide-in-from-right sm:max-w-sm',
+      },
+    },
+    defaultVariants: {
+      side: 'right',
+    },
+  },
+);
+
+interface SheetContentProps
+  extends React.ComponentPropsWithoutRef<typeof SheetPrimitive.Content>,
+    VariantProps<typeof sheetVariants> {}
+
+const SheetContent = React.forwardRef<
+  React.ElementRef<typeof SheetPrimitive.Content>,
+  SheetContentProps
+>(({ side = 'right', className, children, ...props }, ref) => (
+  <SheetPortal>
+    <SheetOverlay />
+    <SheetPrimitive.Content
+      ref={ref}
+      className={cn(sheetVariants({ side }), className)}
+      {...props}
+    >
+      {children}
+      <SheetPrimitive.Close className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+        <X className="h-4 w-4" />
+        <span className="sr-only">Close</span>
+      </SheetPrimitive.Close>
+    </SheetPrimitive.Content>
+  </SheetPortal>
+));
+SheetContent.displayName = SheetPrimitive.Content.displayName;
+
+const SheetHeader = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      'flex flex-col space-y-2 text-center sm:text-left',
+      className,
+    )}
+    {...props}
+  />
+);
+SheetHeader.displayName = 'SheetHeader';
+
+const SheetFooter = ({
+  className,
+  ...props
+}: React.HTMLAttributes<HTMLDivElement>) => (
+  <div
+    className={cn(
+      'flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2',
+      className,
+    )}
+    {...props}
+  />
+);
+SheetFooter.displayName = 'SheetFooter';
+
+const SheetTitle = React.forwardRef<
+  React.ElementRef<typeof SheetPrimitive.Title>,
+  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Title>
+>(({ className, ...props }, ref) => (
+  <SheetPrimitive.Title
+    ref={ref}
+    className={cn('text-lg font-semibold text-foreground', className)}
+    {...props}
+  />
+));
+SheetTitle.displayName = SheetPrimitive.Title.displayName;
+
+const SheetDescription = React.forwardRef<
+  React.ElementRef<typeof SheetPrimitive.Description>,
+  React.ComponentPropsWithoutRef<typeof SheetPrimitive.Description>
+>(({ className, ...props }, ref) => (
+  <SheetPrimitive.Description
+    ref={ref}
+    className={cn('text-sm text-muted-foreground', className)}
+    {...props}
+  />
+));
+SheetDescription.displayName = SheetPrimitive.Description.displayName;
+
+export {
+  Sheet,
+  SheetPortal,
+  SheetOverlay,
+  SheetTrigger,
+  SheetClose,
+  SheetContent,
+  SheetHeader,
+  SheetFooter,
+  SheetTitle,
+  SheetDescription,
+};
+</file>
+
+<file path="src/components/ui/textarea.tsx">
+import * as React from 'react';
+
+import { cn } from '@/lib/utils';
+
+const Textarea = React.forwardRef<
+  HTMLTextAreaElement,
+  React.ComponentProps<'textarea'>
+>(({ className, ...props }, ref) => {
+  return (
+    <textarea
+      className={cn(
+        'flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-base ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 md:text-sm',
+        className,
+      )}
+      ref={ref}
+      {...props}
+    />
+  );
+});
+Textarea.displayName = 'Textarea';
+
+export { Textarea };
+</file>
+
+<file path="src/components/ui/toast.tsx">
+'use client';
+
+import * as React from 'react';
+import * as ToastPrimitives from '@radix-ui/react-toast';
+import { cva, type VariantProps } from 'class-variance-authority';
+import { X } from 'lucide-react';
+
+import { cn } from '@/lib/utils';
+
+const ToastProvider = ToastPrimitives.Provider;
+
+const ToastViewport = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Viewport>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Viewport>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Viewport
+    ref={ref}
+    className={cn(
+      'fixed top-0 z-[100] flex max-h-screen w-full flex-col-reverse p-4 sm:bottom-0 sm:right-0 sm:top-auto sm:flex-col md:max-w-[420px]',
+      className,
+    )}
+    {...props}
+  />
+));
+ToastViewport.displayName = ToastPrimitives.Viewport.displayName;
+
+const toastVariants = cva(
+  'group pointer-events-auto relative flex w-full items-center justify-between space-x-4 overflow-hidden rounded-md border p-6 pr-8 shadow-lg transition-all data-[swipe=cancel]:translate-x-0 data-[swipe=end]:translate-x-[var(--radix-toast-swipe-end-x)] data-[swipe=move]:translate-x-[var(--radix-toast-swipe-move-x)] data-[swipe=move]:transition-none data-[state=open]:animate-in data-[state=closed]:animate-out data-[swipe=end]:animate-out data-[state=closed]:fade-out-80 data-[state=closed]:slide-out-to-right-full data-[state=open]:slide-in-from-top-full data-[state=open]:sm:slide-in-from-bottom-full',
+  {
+    variants: {
+      variant: {
+        default: 'border bg-background text-foreground',
+        destructive:
+          'destructive group border-destructive bg-destructive text-destructive-foreground',
+      },
+    },
+    defaultVariants: {
+      variant: 'default',
+    },
+  },
+);
+
+const Toast = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Root>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Root> &
+    VariantProps<typeof toastVariants>
+>(({ className, variant, ...props }, ref) => {
+  return (
+    <ToastPrimitives.Root
+      ref={ref}
+      className={cn(toastVariants({ variant }), className)}
+      {...props}
+    />
+  );
+});
+Toast.displayName = ToastPrimitives.Root.displayName;
+
+const ToastAction = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Action>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Action>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Action
+    ref={ref}
+    className={cn(
+      'inline-flex h-8 shrink-0 items-center justify-center rounded-md border bg-transparent px-3 text-sm font-medium ring-offset-background transition-colors hover:bg-secondary focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 group-[.destructive]:border-muted/40 group-[.destructive]:hover:border-destructive/30 group-[.destructive]:hover:bg-destructive group-[.destructive]:hover:text-destructive-foreground group-[.destructive]:focus:ring-destructive',
+      className,
+    )}
+    {...props}
+  />
+));
+ToastAction.displayName = ToastPrimitives.Action.displayName;
+
+const ToastClose = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Close>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Close>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Close
+    ref={ref}
+    className={cn(
+      'absolute right-2 top-2 rounded-md p-1 text-foreground/50 opacity-0 transition-opacity hover:text-foreground focus:opacity-100 focus:outline-none focus:ring-2 group-hover:opacity-100 group-[.destructive]:text-red-300 group-[.destructive]:hover:text-red-50 group-[.destructive]:focus:ring-red-400 group-[.destructive]:focus:ring-offset-red-600',
+      className,
+    )}
+    toast-close=""
+    {...props}
+  >
+    <X className="h-4 w-4" />
+  </ToastPrimitives.Close>
+));
+ToastClose.displayName = ToastPrimitives.Close.displayName;
+
+const ToastTitle = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Title>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Title>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Title
+    ref={ref}
+    className={cn('text-sm font-semibold', className)}
+    {...props}
+  />
+));
+ToastTitle.displayName = ToastPrimitives.Title.displayName;
+
+const ToastDescription = React.forwardRef<
+  React.ElementRef<typeof ToastPrimitives.Description>,
+  React.ComponentPropsWithoutRef<typeof ToastPrimitives.Description>
+>(({ className, ...props }, ref) => (
+  <ToastPrimitives.Description
+    ref={ref}
+    className={cn('text-sm opacity-90', className)}
+    {...props}
+  />
+));
+ToastDescription.displayName = ToastPrimitives.Description.displayName;
+
+type ToastProps = React.ComponentPropsWithoutRef<typeof Toast>;
+
+type ToastActionElement = React.ReactElement<typeof ToastAction>;
+
+export {
+  type ToastProps,
+  type ToastActionElement,
+  ToastProvider,
+  ToastViewport,
+  Toast,
+  ToastTitle,
+  ToastDescription,
+  ToastClose,
+  ToastAction,
+};
+</file>
+
+<file path="src/components/ui/toaster.tsx">
+'use client';
+
+import { useToast } from '@/hooks/use-toast';
+import {
+  Toast,
+  ToastClose,
+  ToastDescription,
+  ToastProvider,
+  ToastTitle,
+  ToastViewport,
+} from '@/components/ui/toast';
+
+export function Toaster() {
+  const { toasts } = useToast();
+
+  return (
+    <ToastProvider>
+      {toasts.map(function ({ id, title, description, action, ...props }) {
+        return (
+          <Toast key={id} {...props}>
+            <div className="grid gap-1">
+              {title && <ToastTitle>{title}</ToastTitle>}
+              {description && (
+                <ToastDescription>{description}</ToastDescription>
+              )}
+            </div>
+            {action}
+            <ToastClose />
+          </Toast>
+        );
+      })}
+      <ToastViewport />
+    </ToastProvider>
+  );
+}
+</file>
+
+<file path="src/hooks/use-toast.ts">
+"use client"
+
+// Inspired by react-hot-toast library
+import * as React from "react"
+
+import type {
+  ToastActionElement,
+  ToastProps,
+} from "@/components/ui/toast"
+
+const TOAST_LIMIT = 1
+const TOAST_REMOVE_DELAY = 1000000
+
+type ToasterToast = ToastProps & {
+  id: string
+  title?: React.ReactNode
+  description?: React.ReactNode
+  action?: ToastActionElement
+}
+
+const actionTypes = {
+  ADD_TOAST: "ADD_TOAST",
+  UPDATE_TOAST: "UPDATE_TOAST",
+  DISMISS_TOAST: "DISMISS_TOAST",
+  REMOVE_TOAST: "REMOVE_TOAST",
+} as const
+
+let count = 0
+
+function genId() {
+  count = (count + 1) % Number.MAX_SAFE_INTEGER
+  return count.toString()
+}
+
+type ActionType = typeof actionTypes
+
+type Action =
+  | {
+      type: ActionType["ADD_TOAST"]
+      toast: ToasterToast
+    }
+  | {
+      type: ActionType["UPDATE_TOAST"]
+      toast: Partial<ToasterToast>
+    }
+  | {
+      type: ActionType["DISMISS_TOAST"]
+      toastId?: ToasterToast["id"]
+    }
+  | {
+      type: ActionType["REMOVE_TOAST"]
+      toastId?: ToasterToast["id"]
+    }
+
+interface State {
+  toasts: ToasterToast[]
+}
+
+const toastTimeouts = new Map<string, ReturnType<typeof setTimeout>>()
+
+const addToRemoveQueue = (toastId: string) => {
+  if (toastTimeouts.has(toastId)) {
+    return
+  }
+
+  const timeout = setTimeout(() => {
+    toastTimeouts.delete(toastId)
+    dispatch({
+      type: "REMOVE_TOAST",
+      toastId: toastId,
+    })
+  }, TOAST_REMOVE_DELAY)
+
+  toastTimeouts.set(toastId, timeout)
+}
+
+export const reducer = (state: State, action: Action): State => {
+  switch (action.type) {
+    case "ADD_TOAST":
+      return {
+        ...state,
+        toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
+      }
+
+    case "UPDATE_TOAST":
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === action.toast.id ? { ...t, ...action.toast } : t
+        ),
+      }
+
+    case "DISMISS_TOAST": {
+      const { toastId } = action
+
+      // ! Side effects ! - This could be extracted into a dismissToast() action,
+      // but I'll keep it here for simplicity
+      if (toastId) {
+        addToRemoveQueue(toastId)
+      } else {
+        state.toasts.forEach((toast) => {
+          addToRemoveQueue(toast.id)
+        })
+      }
+
+      return {
+        ...state,
+        toasts: state.toasts.map((t) =>
+          t.id === toastId || toastId === undefined
+            ? {
+                ...t,
+                open: false,
+              }
+            : t
+        ),
+      }
+    }
+    case "REMOVE_TOAST":
+      if (action.toastId === undefined) {
+        return {
+          ...state,
+          toasts: [],
+        }
+      }
+      return {
+        ...state,
+        toasts: state.toasts.filter((t) => t.id !== action.toastId),
+      }
+  }
+}
+
+const listeners: Array<(state: State) => void> = []
+
+let memoryState: State = { toasts: [] }
+
+function dispatch(action: Action) {
+  memoryState = reducer(memoryState, action)
+  listeners.forEach((listener) => {
+    listener(memoryState)
+  })
+}
+
+type Toast = Omit<ToasterToast, "id">
+
+function toast({ ...props }: Toast) {
+  const id = genId()
+
+  const update = (props: ToasterToast) =>
+    dispatch({
+      type: "UPDATE_TOAST",
+      toast: { ...props, id },
+    })
+  const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id })
+
+  dispatch({
+    type: "ADD_TOAST",
+    toast: {
+      ...props,
+      id,
+      open: true,
+      onOpenChange: (open) => {
+        if (!open) dismiss()
+      },
+    },
+  })
+
+  return {
+    id: id,
+    dismiss,
+    update,
+  }
+}
+
+function useToast() {
+  const [state, setState] = React.useState<State>(memoryState)
+
+  React.useEffect(() => {
+    listeners.push(setState)
+    return () => {
+      const index = listeners.indexOf(setState)
+      if (index > -1) {
+        listeners.splice(index, 1)
+      }
+    }
+  }, [state])
+
+  return {
+    ...state,
+    toast,
+    dismiss: (toastId?: string) => dispatch({ type: "DISMISS_TOAST", toastId }),
+  }
+}
+
+export { useToast, toast }
+</file>
+
+<file path="src/lib/constants.ts">
+/**
+ * WhichGame Theme Constants
+ * 디자인 시스템의 색상, 타이포그래피, 스페이싱, 애니메이션 상수
+ */
+
+export const THEME_COLORS = {
+  // Background
+  background: '#0a0a0a',
+  cardBackground: '#1E1E1E',
+  
+  // Text
+  text: '#e0e0e0',
+  textMuted: '#9ca3af',
+  
+  // Accent
+  primary: '#00CEFF',      // Cyan
+  primaryHover: '#0099cc',
+  
+  // Status
+  success: '#10b981',
+  warning: '#f59e0b',
+  error: '#ef4444',
+  statusRed: '#ff4040',
+  
+  // Special
+  gold: '#FFD700',
+  discord: '#5865F2',
+  discordHover: '#4752C4',
+  adBorder: '#FF3B30',
+} as const;
+
+export const TYPOGRAPHY = {
+  fontFamily: "'Noto Sans KR', sans-serif",
+  fontSize: {
+    xs: '0.75rem',    // 12px
+    sm: '0.875rem',   // 14px
+    base: '1rem',     // 16px
+    lg: '1.125rem',   // 18px
+    xl: '1.25rem',    // 20px
+    '2xl': '1.5rem',  // 24px
+  },
+  fontWeight: {
+    normal: 400,
+    medium: 500,
+    bold: 700,
+    black: 900,
+  },
+} as const;
+
+export const SPACING = {
+  cardPadding: '1.25rem',  // 20px
+  sectionGap: '1.5rem',    // 24px
+  gridGap: '1.5rem',       // 24px
+} as const;
+
+export const ANIMATIONS = {
+  fast: '0.2s',
+  normal: '0.3s',
+  slow: '0.5s',
+  pulse: '1.5s',
+} as const;
+
+export const BREAKPOINTS = {
+  mobile: '640px',
+  tablet: '768px',
+  desktop: '1024px',
+  wide: '1280px',
+} as const;
+</file>
+
+<file path="src/lib/icon-mapping.ts">
+/**
+ * Font Awesome to Lucide Icon Mapping
+ * HTML에서 사용된 Font Awesome 아이콘을 Lucide React 아이콘으로 매핑
+ */
+
+import {
+  Gamepad,
+  Code,
+  Trophy,
+  Award,
+  ThumbsUp,
+  Users,
+  Bell,
+  RefreshCw,
+  Heart,
+  Dice1,
+  Crown,
+  type LucideIcon,
+} from 'lucide-react';
+
+export const iconMap: Record<string, LucideIcon> = {
+  // Game related
+  'fa-gamepad': Gamepad,
+  gamepad: Gamepad,
+  
+  // Development
+  'fa-code': Code,
+  code: Code,
+  
+  // Achievement
+  'fa-trophy': Trophy,
+  trophy: Trophy,
+  'fa-award': Award,
+  award: Award,
+  'fa-crown': Crown,
+  crown: Crown,
+  
+  // Social
+  'fa-thumbs-up': ThumbsUp,
+  thumbsUp: ThumbsUp,
+  'fa-users': Users,
+  users: Users,
+  
+  // UI
+  'fa-bell': Bell,
+  bell: Bell,
+  'fa-sync-alt': RefreshCw,
+  refresh: RefreshCw,
+  'fa-heart': Heart,
+  heart: Heart,
+  
+  // Special
+  'fa-dice': Dice1,
+  dice: Dice1,
+};
+
+export const getIcon = (iconName: string): LucideIcon => {
+  return iconMap[iconName] || Gamepad;
+};
+</file>
+
+<file path="src/lib/mock-data.ts">
+/**
+ * Mock Data for WhichGame Homepage
+ */
+
+import type { GameReview, MakerReview, GoatReview } from '@/types/game';
+import type { Achievement } from '@/types/achievement';
+
+export const mockGamerReview: GameReview = {
+  id: '1',
+  gameTitle: '엘든 링',
+  gameImage: 'https://www.genspark.ai/image_placeholder.png',
+  reviewText: '',
+  likesCount: 20,
+  author: {
+    id: 'user1',
+    username: '게이머123',
+  },
+  createdAt: new Date('2024-01-15'),
+  updatedAt: new Date('2024-01-15'),
+};
+
+export const mockMakerReview: MakerReview = {
+  id: '2',
+  gameTitle: '스타듀 밸리',
+  gameImage: 'https://www.genspark.ai/image_placeholder.png',
+  reviewText: '',
+  likesCount: 5,
+  author: {
+    id: 'user2',
+    username: '개발자456',
+  },
+  makerName: 'ConcernedApe',
+  makerRole: 'Solo Developer',
+  createdAt: new Date('2024-01-10'),
+  updatedAt: new Date('2024-01-10'),
+};
+
+export const mockGoatReview: GoatReview = {
+  id: '3',
+  gameTitle: '발더스 게이트 3',
+  gameImage: 'https://www.genspark.ai/image_placeholder.png',
+  reviewText: '',
+  rating: 10,
+  likesCount: 95,
+  author: {
+    id: 'admin',
+    username: 'WhichGame',
+  },
+  month: '12월',
+  year: 2024,
+  isGoat: true,
+  createdAt: new Date('2024-12-01'),
+  updatedAt: new Date('2024-12-01'),
+};
+
+export const mockAchievement: Achievement = {
+  id: 'ach1',
+  name: '777의 사나이',
+  description: '777자로 리뷰를 작성하셨군요!',
+  iconName: 'dice',
+  isHidden: true,
+  isFirstAchievement: true,
+  achievedBy: {
+    userId: 'user2123',
+    username: '#2123',
+    achievedAt: new Date('2024-01-20'),
+  },
+  criteria: {
+    type: 'review_length',
+    value: 777,
+  },
+};
+
+export const mockLiveActivity = {
+  activeUsers: 247,
+  timestamp: new Date(),
+};
+
+export const mockNotifications = {
+  count: 2,
+  hasUnread: true,
+};
+</file>
+
+<file path="src/lib/utils.ts">
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+</file>
+
+<file path="src/types/achievement.ts">
+/**
+ * Achievement Types
+ */
+
+export interface Achievement {
+  id: string;
+  name: string;
+  description: string;
+  iconName: string;
+  isHidden: boolean;
+  isFirstAchievement: boolean;
+  achievedBy: {
+    userId: string;
+    username: string;
+    achievedAt: Date;
+  };
+  criteria: {
+    type: string;
+    value: number | string;
+  };
+}
+</file>
+
+<file path="src/types/game.ts">
+/**
+ * Game Review Types
+ */
+
+export interface GameReview {
+  id: string;
+  gameTitle: string;
+  gameImage: string;
+  reviewText: string;
+  rating?: number;
+  likesCount: number;
+  author: {
+    id: string;
+    username: string;
+  };
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface MakerReview extends GameReview {
+  makerName: string;
+  makerRole: string;
+}
+
+export interface GoatReview extends GameReview {
+  month: string;
+  year: number;
+  isGoat: true;
+}
+
+export interface GameRecommendation {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+}
+
+export interface Advertisement {
+  title: string;
+  subtitle: string;
+  image: string;
+  inquiryText: string;
+}
+</file>
+
+<file path="src/types/user.ts">
+/**
+ * User and Activity Types
+ */
+
+export interface LiveActivity {
+  activeUsers: number;
+  timestamp: Date;
+}
+
+export interface NotificationBadge {
+  count: number;
+  hasUnread: boolean;
+}
+
+export interface NavItem {
+  label: string;
+  href: string;
+}
+
+export interface PartnerInfo {
+  title: string;
+  description: string[];
+  applyLink: string;
+}
+
+export interface DiscordInfo {
+  serverName: string;
+  description: string;
+  inviteLink: string;
+}
+</file>
+
+<file path="tailwind.config.ts">
+import type { Config } from 'tailwindcss';
+
+const config = {
+  darkMode: ['class'],
+  content: ['./src/**/*.{ts,tsx}'],
+  prefix: '',
+  theme: {
+    container: {
+      center: true,
+      padding: '2rem',
+      screens: {
+        '2xl': '1400px',
+      },
+    },
+    extend: {
+      colors: {
+        border: 'hsl(var(--border))',
+        input: 'hsl(var(--input))',
+        ring: 'hsl(var(--ring))',
+        background: 'hsl(var(--background))',
+        foreground: 'hsl(var(--foreground))',
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+        },
+        secondary: {
+          DEFAULT: 'hsl(var(--secondary))',
+          foreground: 'hsl(var(--secondary-foreground))',
+        },
+        destructive: {
+          DEFAULT: 'hsl(var(--destructive))',
+          foreground: 'hsl(var(--destructive-foreground))',
+        },
+        muted: {
+          DEFAULT: 'hsl(var(--muted))',
+          foreground: 'hsl(var(--muted-foreground))',
+        },
+        accent: {
+          DEFAULT: 'hsl(var(--accent))',
+          foreground: 'hsl(var(--accent-foreground))',
+        },
+        popover: {
+          DEFAULT: 'hsl(var(--popover))',
+          foreground: 'hsl(var(--popover-foreground))',
+        },
+        card: {
+          DEFAULT: 'hsl(var(--card))',
+          foreground: 'hsl(var(--card-foreground))',
+        },
+        // WhichGame custom colors
+        'wg-bg': '#0a0a0a',
+        'wg-card': '#1E1E1E',
+        'wg-text': '#e0e0e0',
+        'wg-text-muted': '#9ca3af',
+        'wg-cyan': '#00CEFF',
+        'wg-cyan-hover': '#0099cc',
+        'wg-gold': '#FFD700',
+        'wg-discord': '#5865F2',
+        'wg-discord-hover': '#4752C4',
+        'wg-ad-border': '#FF3B30',
+        'wg-status-red': '#ff4040',
+      },
+      borderRadius: {
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
+      },
+      keyframes: {
+        'accordion-down': {
+          from: { height: '0' },
+          to: { height: 'var(--radix-accordion-content-height)' },
+        },
+        'accordion-up': {
+          from: { height: 'var(--radix-accordion-content-height)' },
+          to: { height: '0' },
+        },
+        pulse: {
+          '0%, 100%': { opacity: '1' },
+          '50%': { opacity: '0.8' },
+        },
+        'pulse-ring': {
+          '0%': { transform: 'scale(1)', opacity: '0.6' },
+          '80%, 100%': { transform: 'scale(1.5)', opacity: '0' },
+        },
+        'rotate-180': {
+          '0%': { transform: 'rotate(0deg)' },
+          '100%': { transform: 'rotate(180deg)' },
+        },
+      },
+      animation: {
+        'accordion-down': 'accordion-down 0.2s ease-out',
+        'accordion-up': 'accordion-up 0.2s ease-out',
+        pulse: 'pulse 1.5s infinite',
+        'pulse-ring': 'pulse-ring 1.5s infinite',
+        'rotate-180': 'rotate-180 0.3s ease-in-out',
+      },
+      fontFamily: {
+        sans: ['var(--font-noto-sans-kr)', 'sans-serif'],
+      },
+    },
+  },
+  plugins: [require('tailwindcss-animate'), require('@tailwindcss/typography')],
+} satisfies Config;
+
+export default config;
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "strictNullChecks": false,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noImplicitAny": false,
+    "jsx": "preserve",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules"]
+}
+</file>
+
+</files>
